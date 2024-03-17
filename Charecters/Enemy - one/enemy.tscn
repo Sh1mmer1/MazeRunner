@@ -1,0 +1,176 @@
+[gd_scene load_steps=35 format=3 uid="uid://dw3fkahx3vh0t"]
+
+[ext_resource type="Script" path="res://Charecters/Enemy - one/enemy.gd" id="1_6tntp"]
+[ext_resource type="Texture2D" uid="uid://dw06en48ousxm" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front0.png" id="2_3e8sd"]
+[ext_resource type="Texture2D" uid="uid://cgx2xllp0dglk" path="res://Assets/Alien - enemy/Alien - death/alien_death00.png" id="2_4kp23"]
+[ext_resource type="Texture2D" uid="uid://pgiv81woka1n" path="res://Assets/Alien - enemy/Alien - death/alien_death01.png" id="3_0ne4f"]
+[ext_resource type="Texture2D" uid="uid://dnbm5crygeffu" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front1.png" id="3_uypwk"]
+[ext_resource type="Texture2D" uid="uid://dxnsvo323b7v7" path="res://Assets/Alien - enemy/Alien - death/alien_death02.png" id="4_7tuqq"]
+[ext_resource type="Texture2D" uid="uid://b1nfvsqkblyp7" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front2.png" id="4_tuuha"]
+[ext_resource type="Texture2D" uid="uid://cvdk72vjeuwis" path="res://Assets/Alien - enemy/Alien - death/alien_death03.png" id="5_8xfni"]
+[ext_resource type="Texture2D" uid="uid://ct35aye8buw78" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front3.png" id="5_v2n8v"]
+[ext_resource type="Texture2D" uid="uid://ct8flrnorve74" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front4.png" id="6_dyjx2"]
+[ext_resource type="Texture2D" uid="uid://cacx360od253i" path="res://Assets/Alien - enemy/Alien - death/alien_death04.png" id="6_owumj"]
+[ext_resource type="Texture2D" uid="uid://h7twt3xlo1l3" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front5.png" id="7_grk77"]
+[ext_resource type="Texture2D" uid="uid://cry7pgn1blbqh" path="res://Assets/Alien - enemy/Alien - death/alien_death05.png" id="7_w310k"]
+[ext_resource type="Texture2D" uid="uid://jojhokmuxubd" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front6.png" id="8_b6wly"]
+[ext_resource type="Texture2D" uid="uid://dkyyrufmen1sw" path="res://Assets/Alien - enemy/Alien - death/alien_death06.png" id="8_k0xvt"]
+[ext_resource type="Texture2D" uid="uid://chjshl3pbeunq" path="res://Assets/Alien - enemy/Alien - death/alien_death07.png" id="9_4crvw"]
+[ext_resource type="Texture2D" uid="uid://4sy6l1p7qcuw" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front7.png" id="9_imcca"]
+[ext_resource type="Texture2D" uid="uid://tfmqjrlwajlu" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front8.png" id="10_1s6qk"]
+[ext_resource type="Texture2D" uid="uid://ddbgoyf1bldy5" path="res://Assets/Alien - enemy/Alien - death/alien_death08.png" id="10_xaixr"]
+[ext_resource type="Texture2D" uid="uid://cjb217j8dvmip" path="res://Assets/Alien - enemy/Alien - death/alien_death09.png" id="11_fanwb"]
+[ext_resource type="Texture2D" uid="uid://cqin6rotu6eeo" path="res://Assets/Alien - enemy/Alien - death/alien_death10.png" id="12_jcdh1"]
+[ext_resource type="Texture2D" uid="uid://boqax7bifin4a" path="res://Assets/Alien - enemy/Alien - death/alien_death11.png" id="13_ddmjv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dar6w"]
+atlas = ExtResource("2_3e8sd")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tugbp"]
+atlas = ExtResource("3_uypwk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hx67"]
+atlas = ExtResource("4_tuuha")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5iuk"]
+atlas = ExtResource("5_v2n8v")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs1tp"]
+atlas = ExtResource("6_dyjx2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu272"]
+atlas = ExtResource("7_grk77")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b01ly"]
+atlas = ExtResource("8_b6wly")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftfc5"]
+atlas = ExtResource("9_imcca")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2ewp"]
+atlas = ExtResource("10_1s6qk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0a3ja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4kp23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ne4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7tuqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8xfni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_owumj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w310k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k0xvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4crvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xaixr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fanwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jcdh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ddmjv")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dar6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tugbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hx67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5iuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs1tp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu272")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b01ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftfc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2ewp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75kgh"]
+radius = 273.222
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mb6st"]
+radius = 19.0
+height = 60.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_6tntp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 3)
+sprite_frames = SubResource("SpriteFrames_0a3ja")
+animation = &"idle"
+frame_progress = 0.888464
+
+[node name="detection_area" type="Area2D" parent="AnimatedSprite2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/detection_area"]
+position = Vector2(0, 18)
+shape = SubResource("CircleShape2D_75kgh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 26)
+shape = SubResource("CapsuleShape2D_mb6st")
+
+[connection signal="body_entered" from="AnimatedSprite2D/detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
