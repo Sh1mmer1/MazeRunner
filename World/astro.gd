@@ -1,4 +1,4 @@
-xtends CharacterBody2D
+Extends CharacterBody2D
 
 
 class_name Player

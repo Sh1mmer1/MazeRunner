@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://du1nk0o1dq6kn"]
+
+[ext_resource type="Script" path="res://World/laser.gd" id="1_0gcfp"]
+[ext_resource type="Texture2D" uid="uid://c2imn6mr40ov3" path="res://Assets/Lasertrap/lasertrap_off0.png" id="1_y6610"]
+[ext_resource type="Texture2D" uid="uid://drxp6rnk71b0b" path="res://Assets/Lasertrap/lasertrap_off1.png" id="3_4snr6"]
+[ext_resource type="Texture2D" uid="uid://copc61xrqdf07" path="res://Assets/Lasertrap/lasertrap_off2.png" id="4_u3v1w"]
+[ext_resource type="Texture2D" uid="uid://d4nwh4y3hvn3j" path="res://Assets/Lasertrap/lasertrap_off3.png" id="5_o2tly"]
+[ext_resource type="Script" path="res://World/LaserDisable.gd" id="6_h2spf"]
+[ext_resource type="Texture2D" uid="uid://3arudqhdlh26" path="res://Assets/temp.png" id="6_wtksx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xn46c"]
+size = Vector2(23, 188)
+
+[sub_resource type="Animation" id="Animation_jupu5"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("laser:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_y6610"), ExtResource("3_4snr6"), ExtResource("4_u3v1w"), ExtResource("5_o2tly")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_al51b"]
+_data = {
+"default": SubResource("Animation_jupu5")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ey2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wtksx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ly2u"]
+size = Vector2(51, 47)
+
+[node name="GlobalSignal" type="Node2D"]
+
+[node name="Laser" type="Area2D" parent="." groups=["Lasers"]]
+script = ExtResource("1_0gcfp")
+
+[node name="laser" type="Sprite2D" parent="Laser"]
+texture = ExtResource("1_y6610")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_xn46c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Laser"]
+libraries = {
+"": SubResource("AnimationLibrary_al51b")
+}
+
+[node name="LaserDisable" type="Area2D" parent="."]
+script = ExtResource("6_h2spf")
+
+[node name="OffButton" type="AnimatedSprite2D" parent="LaserDisable"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(172, 235.5)
+scale = Vector2(4.625, 4.65625)
+sprite_frames = SubResource("SpriteFrames_1ey2g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LaserDisable"]
+position = Vector2(162.5, 221)
+shape = SubResource("RectangleShape2D_6ly2u")
+
+[connection signal="body_entered" from="Laser" to="Laser" method="_on_body_entered"]
+[connection signal="body_entered" from="LaserDisable" to="Laser" method="_on_laser_disable_body_entered"]
+[connection signal="body_entered" from="LaserDisable" to="LaserDisable" method="_on_body_entered"]

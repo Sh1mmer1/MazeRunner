@@ -40,7 +40,8 @@ script = ExtResource("1_0skpq")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wnjfb")
 animation = &"blue_card_"
-frame_progress = 0.776569
+frame = 1
+frame_progress = 0.642686
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
