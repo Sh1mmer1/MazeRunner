@@ -63,3 +63,6 @@ func die():
 		animated_sprite.visible = false
 		body_sprite.visible = true
 		animation_player.play("death")
+
+func set_speed(new_speed: float): 
+	speed = new_speed

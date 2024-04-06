@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cbyy5cubcns5m"]
+[gd_scene load_steps=30 format=3 uid="uid://ca4jhs7rwnae1"]
 
 [ext_resource type="Script" path="res://Charecters/Player/Player.gd" id="1_n0hds"]
 [ext_resource type="Texture2D" uid="uid://bnyu0163fvifg" path="res://Assets/Astronaut - player/astronaut_death/alien_death09.png" id="2_110du"]
@@ -104,13 +104,28 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="Animation" id="Animation_sh0en"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Body:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_0htrs"), ExtResource("15_446oi"), ExtResource("17_mbvrt"), ExtResource("18_pobl1"), ExtResource("19_bh2de"), ExtResource("21_i75wx"), ExtResource("22_s2y34"), ExtResource("23_nodiu"), ExtResource("2_110du"), ExtResource("24_3fp8q"), ExtResource("24_s2sd0")]
+}
+
 [sub_resource type="Animation" id="Animation_7s4qu"]
 resource_name = "new_animation"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
+tracks/0/path = NodePath("../Body:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -120,52 +135,33 @@ tracks/0/keys = {
 "values": [ExtResource("7_b4u02"), ExtResource("8_3266u")]
 }
 
-[sub_resource type="Animation" id="Animation_sh0en"]
-resource_name = "death"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("14_0htrs"), ExtResource("15_446oi"), ExtResource("17_mbvrt"), ExtResource("18_pobl1"), ExtResource("19_bh2de"), ExtResource("21_i75wx"), ExtResource("22_s2y34"), ExtResource("23_nodiu"), ExtResource("2_110du"), ExtResource("24_3fp8q"), ExtResource("24_s2sd0")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2k4og"]
 _data = {
 "death": SubResource("Animation_sh0en"),
 "idle_main": SubResource("Animation_7s4qu")
 }
 
-[node name="Player" type="Camera2D"]
-zoom = Vector2(0.5, 0.5)
-
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 motion_mode = 1
 script = ExtResource("1_n0hds")
 speed = 5000.0
 
-[node name="Body" type="Sprite2D" parent="Player"]
+[node name="Body" type="Sprite2D" parent="."]
 position = Vector2(-1, -23)
-texture = ExtResource("24_3fp8q")
+texture = ExtResource("14_0htrs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -10)
 shape = SubResource("CapsuleShape2D_5lh41")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -22)
 sprite_frames = SubResource("SpriteFrames_hh3h1")
 animation = &"idle_main"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Body")
 libraries = {
 "": SubResource("AnimationLibrary_2k4og")
 }

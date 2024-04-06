@@ -6,9 +6,11 @@ var player: Player = null
 
 
 func _physics_process(delta):
-	if player_chase:
-		position += (player.position - position)/speed
+	if player_chase and player != null:
+		var direction = (player.global_position - global_position).normalized()
+		position += direction*speed*delta
 		$AnimatedSprite2D.play("idle")
+	move_and_slide()
 
 
 func _on_detection_area_body_entered(body):
