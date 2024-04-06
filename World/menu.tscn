@@ -1,8 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1jsfhxuygo4j"]
+[gd_scene load_steps=13 format=3 uid="uid://b1jsfhxuygo4j"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_ui2eb"]
+[ext_resource type="Texture2D" uid="uid://daunjx4d8v7tg" path="res://Assets/Menu/play.png" id="2_slke0"]
+[ext_resource type="Texture2D" uid="uid://cbth33pwc2ak1" path="res://Assets/Menu/exit.png" id="3_j871g"]
+[ext_resource type="Texture2D" uid="uid://bfyojuouptpd2" path="res://Assets/Menu/sett (1).png" id="4_rqytb"]
+[ext_resource type="Texture2D" uid="uid://cvrvdciv6hlle" path="res://Assets/Menu/menu2.png" id="6_5rgnc"]
+[ext_resource type="Texture2D" uid="uid://7etx6in7m4ly" path="res://Assets/Menu/menu1.png" id="7_dyydf"]
+[ext_resource type="Texture2D" uid="uid://bnn6cq7gh4xbr" path="res://Assets/Menu/playHover.png" id="7_o6vhl"]
+[ext_resource type="VideoStream" path="res://Assets/Menu/menuBg.ogv" id="9_fjyrd"]
+[ext_resource type="Texture2D" uid="uid://dfjeduqlby7io" path="res://Assets/Menu/exitHover.png" id="9_fu1qn"]
+
+[sub_resource type="Animation" id="Animation_2dnyy"]
+resource_name = "menu"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 2, 3, 3.4, 3.8, 3.9, 4.1, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_5rgnc"), ExtResource("7_dyydf"), ExtResource("6_5rgnc"), ExtResource("7_dyydf"), ExtResource("6_5rgnc"), ExtResource("7_dyydf"), ExtResource("6_5rgnc"), ExtResource("7_dyydf"), ExtResource("6_5rgnc")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_borqb"]
+_data = {
+"menu": SubResource("Animation_2dnyy")
+}
+
+[sub_resource type="Theme" id="Theme_wpabh"]
 
 [node name="Menu" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,26 +44,64 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ui2eb")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(578, 325)
+scale = Vector2(0.601042, 0.601852)
+texture = ExtResource("6_5rgnc")
+
+[node name="Main_menu" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_borqb")
+}
+
+[node name="Settings" type="TextureButton" parent="."]
+z_index = 2
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1039.0
+offset_top = 552.0
+offset_right = 1163.0
+offset_bottom = 665.0
+texture_normal = ExtResource("4_rqytb")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Play" type="TextureButton" parent="."]
+z_index = 2
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+offset_left = 202.0
+offset_top = 408.0
+offset_right = 602.0
+offset_bottom = 508.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_wpabh")
+texture_normal = ExtResource("2_slke0")
+texture_hover = ExtResource("7_o6vhl")
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Exit" type="TextureButton" parent="."]
+z_index = 2
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "PLAY"
+offset_left = 204.0
+offset_top = 486.0
+offset_right = 604.0
+offset_bottom = 586.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_j871g")
+texture_hover = ExtResource("9_fu1qn")
 
-[node name="Levels" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "LEVELS"
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 151.0
+offset_right = 1732.0
+offset_bottom = 733.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("9_fjyrd")
+autoplay = true
+expand = true
+loop = true
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "EXIT"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Levels" to="." method="_on_levels_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

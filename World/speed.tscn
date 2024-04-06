@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjsdsfgryu31g"]
 
 [ext_resource type="Script" path="res://World/speed.gd" id="1_0gn3t"]
-[ext_resource type="Texture2D" uid="uid://dfspnw2k66bgg" path="res://Assets/temp – kopija.png" id="1_vhpuw"]
+[ext_resource type="Texture2D" uid="uid://dfspnw2k66bgg" path="res://Assets/temp - kopija.png" id="1_vhpuw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fpj88"]
 animations = [{
