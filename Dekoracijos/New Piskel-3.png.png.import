@@ -1,0 +1,20 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture2D"
+uid="uid://cpusqhs7pdk40"
+path="res://.godot/imported/New Piskel-3.png.png-050a8330b74bc2932bdc8176fb5e4652.res"
+group_file="res://Assets/Map - Space/Dekoracijos/atlasas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Map - Space/Dekoracijos/New Piskel-3.png.png"
+dest_files=["res://.godot/imported/New Piskel-3.png.png-050a8330b74bc2932bdc8176fb5e4652.res"]
+
+[params]
+
+atlas_file="res://Assets/Map - Space/Dekoracijos/atlasas.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

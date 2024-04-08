@@ -1,0 +1,20 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture2D"
+uid="uid://d0wgdll6ulemu"
+path="res://.godot/imported/space1.png-651920f8cb26ae6262e6f7231aa54a2e.res"
+group_file="res://Assets/Map - Space/Dekoracijos/atlasas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Map - Space/Dekoracijos/space1.png"
+dest_files=["res://.godot/imported/space1.png-651920f8cb26ae6262e6f7231aa54a2e.res"]
+
+[params]
+
+atlas_file="res://Assets/Map - Space/Dekoracijos/atlasas.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true
