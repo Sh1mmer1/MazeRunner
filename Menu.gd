@@ -13,3 +13,4 @@ func _on_exit_pressed():
 
 func _ready():
 	$Sprite2D/Main_menu.play("menu")
+	$MenuMusic.play()
