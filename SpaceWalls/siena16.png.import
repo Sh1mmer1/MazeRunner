@@ -1,0 +1,20 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture2D"
+uid="uid://bydot0ltkk2dr"
+path="res://.godot/imported/siena16.png-872d55f95f766e35b2d5765443e9c7ca.res"
+group_file="res://Assets/SpaceWalls/atlasas.png"
+valid=true
+[deps]
+
+
+source_file="res://Assets/Map - Space/SpaceWalls/siena16.png"
+dest_files=["res://.godot/imported/siena16.png-872d55f95f766e35b2d5765443e9c7ca.res"]
+
+[params]
+
+atlas_file="res://Assets/SpaceWalls/atlasas.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true
