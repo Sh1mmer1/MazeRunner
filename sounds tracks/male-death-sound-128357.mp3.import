@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cy37ktjjn0qxe"
+path="res://.godot/imported/male-death-sound-128357.mp3-2fd18f657071a8eb432b5cfa5f319fe8.mp3str"
+
+[deps]
+
+source_file="res://sounds tracks/male-death-sound-128357.mp3"
+dest_files=["res://.godot/imported/male-death-sound-128357.mp3-2fd18f657071a8eb432b5cfa5f319fe8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
