@@ -4,7 +4,7 @@ class_name Player
 
 signal player_dead
 
-@export var speed : float = 3.0
+@export var speed : float = 2.0
 var is_dead: bool = false
 
 var animated_sprite: AnimatedSprite2D
@@ -27,7 +27,7 @@ func _physics_process(delta):
 		var direction = Input.get_vector("left", "right", "up", "down").normalized()
 
 		if direction != Vector2.ZERO:
-			velocity = direction * speed * delta * 5
+			velocity = direction * speed * delta * 3
 			update_sprite_direction(direction)
 		else:
 			velocity = Vector2.ZERO
@@ -56,10 +56,16 @@ func update_sprite_direction(direction):
 		is_animating = true
 		body_sprite.visible = false
 		animated_sprite.visible = true
+	else:
+		if $Timer.time_left <= 0:
+			$footstep.pitch_scale = randf_range(0.8, 1.2)
+			$footstep.play()
+			$Timer.start(1)
 
 func die():
 	if not is_dead:
 		is_dead = true
+		$DeathSound.play()
 		animated_sprite.visible = false
 		body_sprite.visible = true
 		animation_player.play("death")

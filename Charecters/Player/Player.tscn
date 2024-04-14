@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ca4jhs7rwnae1"]
+[gd_scene load_steps=32 format=3 uid="uid://ca4jhs7rwnae1"]
 
 [ext_resource type="Script" path="res://Charecters/Player/Player.gd" id="1_n0hds"]
 [ext_resource type="Texture2D" uid="uid://bnyu0163fvifg" path="res://Assets/Astronaut - player/astronaut_death/alien_death09.png" id="2_110du"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://cnhpnwbyf1c5l" path="res://Assets/Astronaut - player/astronaut_death/alien_death08.png" id="23_nodiu"]
 [ext_resource type="Texture2D" uid="uid://c8i0r4jjy0kui" path="res://Assets/Astronaut - player/astronaut_death/alien_death10.png" id="24_3fp8q"]
 [ext_resource type="Texture2D" uid="uid://xhxs13tff6pk" path="res://Assets/Astronaut - player/astronaut_death/alien_death11.png" id="24_s2sd0"]
+[ext_resource type="AudioStream" uid="uid://d06ny7ypsx817" path="res://sounds tracks/snd_footsteps_concrete-36690.mp3" id="25_g74ga"]
+[ext_resource type="AudioStream" uid="uid://cy37ktjjn0qxe" path="res://sounds tracks/male-death-sound-128357.mp3" id="26_intwu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lh41"]
 radius = 22.0
@@ -118,6 +120,17 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("14_0htrs"), ExtResource("15_446oi"), ExtResource("17_mbvrt"), ExtResource("18_pobl1"), ExtResource("19_bh2de"), ExtResource("21_i75wx"), ExtResource("22_s2y34"), ExtResource("23_nodiu"), ExtResource("2_110du"), ExtResource("24_3fp8q"), ExtResource("24_s2sd0")]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_7s4qu"]
 resource_name = "new_animation"
@@ -165,3 +178,14 @@ root_node = NodePath("../Body")
 libraries = {
 "": SubResource("AnimationLibrary_2k4og")
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="footstep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_g74ga")
+volume_db = -20.0
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_intwu")
+volume_db = -20.0

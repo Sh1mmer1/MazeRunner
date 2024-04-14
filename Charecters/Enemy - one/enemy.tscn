@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dw3fkahx3vh0t"]
+[gd_scene load_steps=37 format=3 uid="uid://dw3fkahx3vh0t"]
 
 [ext_resource type="Script" path="res://Charecters/Enemy - one/enemy.gd" id="1_6tntp"]
 [ext_resource type="Texture2D" uid="uid://dw06en48ousxm" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front0.png" id="2_3e8sd"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cjb217j8dvmip" path="res://Assets/Alien - enemy/Alien - death/alien_death09.png" id="11_fanwb"]
 [ext_resource type="Texture2D" uid="uid://cqin6rotu6eeo" path="res://Assets/Alien - enemy/Alien - death/alien_death10.png" id="12_jcdh1"]
 [ext_resource type="Texture2D" uid="uid://boqax7bifin4a" path="res://Assets/Alien - enemy/Alien - death/alien_death11.png" id="13_ddmjv"]
+[ext_resource type="AudioStream" uid="uid://i2htpg7odryg" path="res://sounds tracks/alien-screaming-82512.mp3" id="23_sauon"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dar6w"]
 atlas = ExtResource("2_3e8sd")
@@ -182,6 +183,10 @@ shape = SubResource("CapsuleShape2D_mb6st")
 visible = false
 position = Vector2(2, 8)
 shape = SubResource("CapsuleShape2D_hapab")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_sauon")
+volume_db = -20.0
 
 [connection signal="body_entered" from="AnimatedSprite2D/detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite2D/detection_area" to="." method="_on_detection_area_body_exited"]
