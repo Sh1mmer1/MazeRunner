@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfjeduqlby7io"
-path="res://.godot/imported/exitHover.png-4349f862403dbaae24110167612e42b7.ctex"
+uid="uid://cidjxud6j7gyt"
+path="res://.godot/imported/ginklas-1.png-539ee7abb861fd9300522b20b1fb1d47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu/exitHover.png"
-dest_files=["res://.godot/imported/exitHover.png-4349f862403dbaae24110167612e42b7.ctex"]
+source_file="res://Assets/Gun/ginklas-1.png"
+dest_files=["res://.godot/imported/ginklas-1.png-539ee7abb861fd9300522b20b1fb1d47.ctex"]
 
 [params]
 

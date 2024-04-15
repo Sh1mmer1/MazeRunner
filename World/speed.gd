@@ -6,7 +6,7 @@ var speed_change: bool = false
 var time: float = 0
 
 func _ready():
-	pass
+	$AnimatedSprite2D.play("default_speed")
 
 func _process(delta):
 	if speed_change:

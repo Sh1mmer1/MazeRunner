@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b7nus3b8yr4y2"]
+[gd_scene load_steps=25 format=3 uid="uid://b7nus3b8yr4y2"]
 
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="1_5eya8"]
 [ext_resource type="Texture2D" uid="uid://bntku8k33s56k" path="res://Assets/Map - Space/SpaceWalls/atlasas.png" id="1_k12qa"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://gp8wwkur8o0t" path="res://Assets/Map - Space/SpaceWalls/fixedsiena4.png" id="5_ufi42"]
 [ext_resource type="PackedScene" uid="uid://bjsdsfgryu31g" path="res://World/speed.tscn" id="6_4cdrg"]
 [ext_resource type="Texture2D" uid="uid://bajkrnt243lbt" path="res://Assets/Map - Space/SpaceWalls/fixedsiena6.png" id="8_ly2m7"]
+[ext_resource type="PackedScene" uid="uid://dmo3a10xt0rid" path="res://World/gun.tscn" id="14_acdem"]
+[ext_resource type="Script" path="res://World/gun.gd" id="15_g1gkp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ngif"]
 texture = ExtResource("1_k12qa")
@@ -645,8 +647,8 @@ scale = Vector2(0.25, 0.25)
 [node name="Speed" type="Node2D" parent="TileMap"]
 
 [node name="Area2D" parent="TileMap/Speed" instance=ExtResource("6_4cdrg")]
-position = Vector2(-62, 137)
-scale = Vector2(2, 2)
+position = Vector2(-85, 64)
+scale = Vector2(0.45, 0.45)
 
 [node name="Player" parent="TileMap" instance=ExtResource("1_5eya8")]
 light_mask = 2
@@ -659,3 +661,13 @@ collision_mask = 14
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
 position = Vector2(-27.5, 5)
+
+[node name="Gun" type="Node2D" parent="TileMap"]
+
+[node name="Gun" parent="TileMap/Gun" instance=ExtResource("14_acdem")]
+position = Vector2(-347, 134)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("15_g1gkp")
+
+[connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]
+[connection signal="gun_pickup" from="TileMap/Gun/Gun" to="TileMap/Player" method="_on_gun_gun_pickup"]

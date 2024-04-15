@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnn6cq7gh4xbr"
-path="res://.godot/imported/playHover.png-3454b6d8a5009258ea81fb5657c58700.ctex"
+uid="uid://bff150qyb0p3x"
+path="res://.godot/imported/sprite_powerup2.png-fac6469b89cc7c901e52b11cc41877ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu/playHover.png"
-dest_files=["res://.godot/imported/playHover.png-3454b6d8a5009258ea81fb5657c58700.ctex"]
+source_file="res://Assets/Speed/sprite_powerup2.png"
+dest_files=["res://.godot/imported/sprite_powerup2.png-fac6469b89cc7c901e52b11cc41877ba.ctex"]
 
 [params]
 

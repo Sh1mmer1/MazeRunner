@@ -10,6 +10,8 @@ var is_dead: bool = false
 var animated_sprite: AnimatedSprite2D
 var body_sprite: Sprite2D
 var is_animating: bool = false
+var enemy: Enemy = null
+var is_gun_picked_up:bool = false
 @onready var animation_player = $AnimationPlayer
 @onready var collision_shape = $CollisionShape2D
 
@@ -22,6 +24,7 @@ func _ready():
 	animated_sprite.visible = false
 	animation_player.play("idle_main")
 
+	
 func _physics_process(delta):
 	if not is_dead:
 		var direction = Input.get_vector("left", "right", "up", "down").normalized()
@@ -72,3 +75,13 @@ func die():
 
 func set_speed(new_speed: float): 
 	speed = new_speed
+
+
+func _on_range_body_entered(body):
+	if is_gun_picked_up:
+		if body.has_method("dieAlien"):
+			body.dieAlien()
+
+
+func _on_gun_gun_pickup(is_picked_up):
+	is_gun_picked_up = is_picked_up

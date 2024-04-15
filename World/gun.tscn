@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmo3a10xt0rid"]
+
+[ext_resource type="Texture2D" uid="uid://cidjxud6j7gyt" path="res://Assets/Gun/ginklas-1.png" id="1_w5a3g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dedy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w5a3g")
+}],
+"loop": true,
+"name": &"default_gun",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8dt0"]
+size = Vector2(138, 40)
+
+[node name="Gun" type="Area2D"]
+
+[node name="gun" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dedy8")
+animation = &"default_gun"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_p8dt0")

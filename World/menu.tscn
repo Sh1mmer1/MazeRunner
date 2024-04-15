@@ -47,8 +47,8 @@ script = ExtResource("1_ui2eb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(578, 325)
-scale = Vector2(0.601042, 0.601852)
+position = Vector2(578, 327)
+scale = Vector2(0.601042, 0.598148)
 texture = ExtResource("6_5rgnc")
 
 [node name="Main_menu" type="AnimationPlayer" parent="Sprite2D"]
