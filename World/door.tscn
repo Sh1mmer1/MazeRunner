@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://lrhuypc4bffa"]
+
+[ext_resource type="Texture2D" uid="uid://bdahkdkehptxf" path="res://Assets/Door/sprite_door0.png" id="1_3cfhv"]
+[ext_resource type="Script" path="res://World/door.gd" id="1_qpiwj"]
+[ext_resource type="Texture2D" uid="uid://bodtp1g2mqd5w" path="res://Assets/Door/sprite_door1.png" id="2_a0px7"]
+[ext_resource type="Texture2D" uid="uid://bxi3h6l3gsayk" path="res://Assets/Door/sprite_door2.png" id="3_4sep3"]
+[ext_resource type="Texture2D" uid="uid://wehm6y1lritu" path="res://Assets/Door/sprite_door3.png" id="4_176wq"]
+[ext_resource type="Texture2D" uid="uid://b7co8bcu51nep" path="res://Assets/Door/sprite_door4.png" id="5_qig5u"]
+[ext_resource type="Texture2D" uid="uid://bfoxvaqgkws40" path="res://Assets/Door/sprite_door5.png" id="6_i2e32"]
+[ext_resource type="Texture2D" uid="uid://cq4nl54f2k40c" path="res://Assets/Door/sprite_door6.png" id="7_6jvq3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aoelo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3cfhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a0px7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4sep3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_176wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qig5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i2e32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6jvq3")
+}],
+"loop": false,
+"name": &"default_door",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsibb"]
+radius = 35.0
+height = 256.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kbass"]
+height = 268.0
+
+[node name="Door" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_qpiwj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aoelo")
+animation = &"default_door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+shape = SubResource("CapsuleShape2D_wsibb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+disable_mode = 1
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4, 0)
+shape = SubResource("CapsuleShape2D_kbass")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

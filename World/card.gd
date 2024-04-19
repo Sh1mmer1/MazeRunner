@@ -13,4 +13,12 @@ func _on_body_entered(body):
 	if body is Player:
 		card_pickup.emit(self)
 		queue_free()
-		
+		var cards = get_tree().get_nodes_in_group("Cards")
+		if cards.size() == 1:
+			var parent = get_parent().get_parent()
+			var door = parent.get_node("Door/Door") # Assuming Door is a direct child of the parent node
+			if door:
+				door.card_count_is_one()
+				
+				
+				#			Events.victory.emit()

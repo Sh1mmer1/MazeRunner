@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://btoxlbpbm77kt"]
+
+[ext_resource type="Script" path="res://World/game_over.gd" id="1_nwbyv"]
+
+[node name="gameOver" type="CanvasLayer"]
+script = ExtResource("1_nwbyv")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -73.0
+offset_right = 45.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -534.0
+offset_top = -251.0
+offset_right = 532.0
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 461.0
+offset_top = 296.0
+offset_right = 711.0
+offset_bottom = 348.0
+text = "Retry"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 458.0
+offset_top = 372.0
+offset_right = 713.0
+offset_bottom = 422.0
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

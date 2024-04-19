@@ -15,6 +15,10 @@ run/main_scene="res://World/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Events="*res://World/Events.gd"
+
 [display]
 
 window/stretch/mode="viewport"
@@ -48,6 +52,7 @@ down={
 2d_physics/layer_2="Wall"
 2d_physics/layer_3="Keycard"
 2d_physics/layer_4="Enemy"
+2d_physics/layer_6="Door"
 
 [rendering]
 

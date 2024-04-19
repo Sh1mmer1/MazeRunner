@@ -29,8 +29,9 @@ func _on_detection_area_body_exited(body):
 
 
 func _on_area_2d_body_entered(body):
-	if body.has_method("die"):
-		body.die()
+	if not alien_is_dead:
+		if body.has_method("die"):
+			body.die()
 
 func dieAlien():
 	if not alien_is_dead:

@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://cci07n1fbh7ga"]
+
+[ext_resource type="Script" path="res://World/victory.gd" id="1_bgs4a"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_bgs4a")
+
+[node name="Victory" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.74902)
+
+[node name="Label" type="Label" parent="Victory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 461.0
+offset_top = 265.0
+offset_right = 580.0
+offset_bottom = 358.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "Level Complete"
+
+[node name="ColorRect" type="ColorRect" parent="Victory/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = -133.0
+offset_right = 227.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.545098)
+
+[node name="Back" type="Button" parent="."]
+offset_left = 449.0
+offset_top = 435.0
+offset_right = 704.0
+offset_bottom = 485.0
+text = "Back to Main Menu"
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 369.0
+offset_right = 705.0
+offset_bottom = 421.0
+text = "Retry"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
