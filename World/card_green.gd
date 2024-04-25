@@ -13,5 +13,6 @@ func _ready():
 func _on_body_entered(body):
 	if body is Player:
 		card_pickup.emit(self)
+		$PickUpItem.play9
 		queue_free()
 		

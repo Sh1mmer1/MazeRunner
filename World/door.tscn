@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lrhuypc4bffa"]
+[gd_scene load_steps=19 format=3 uid="uid://lrhuypc4bffa"]
 
 [ext_resource type="Texture2D" uid="uid://bdahkdkehptxf" path="res://Assets/Door/sprite_door0.png" id="1_3cfhv"]
 [ext_resource type="Script" path="res://World/door.gd" id="1_qpiwj"]
@@ -8,6 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://b7co8bcu51nep" path="res://Assets/Door/sprite_door4.png" id="5_qig5u"]
 [ext_resource type="Texture2D" uid="uid://bfoxvaqgkws40" path="res://Assets/Door/sprite_door5.png" id="6_i2e32"]
 [ext_resource type="Texture2D" uid="uid://cq4nl54f2k40c" path="res://Assets/Door/sprite_door6.png" id="7_6jvq3"]
+[ext_resource type="Texture2D" uid="uid://drpadgyngh8no" path="res://Assets/Doorv2/sprite_door0.png" id="9_1odag"]
+[ext_resource type="AudioStream" uid="uid://cxidq5ll6j5nm" path="res://sounds tracks/opening-metal-door-199581.mp3" id="9_wfho8"]
+[ext_resource type="Texture2D" uid="uid://c6v7v2pjf6ptq" path="res://Assets/Doorv2/sprite_door1.png" id="10_tv00t"]
+[ext_resource type="Texture2D" uid="uid://cq0dhmgwdskmk" path="res://Assets/Doorv2/sprite_door2.png" id="11_3i1o5"]
+[ext_resource type="Texture2D" uid="uid://bwg4dkl7bnjvw" path="res://Assets/Doorv2/sprite_door3.png" id="12_l82cp"]
+[ext_resource type="Texture2D" uid="uid://3uxq0vpf5x1n" path="res://Assets/Doorv2/sprite_door4.png" id="13_i5d8e"]
+[ext_resource type="Texture2D" uid="uid://b1mtc8ai8gjt4" path="res://Assets/Doorv2/sprite_door5.png" id="14_ll7xy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aoelo"]
 animations = [{
@@ -36,6 +43,29 @@ animations = [{
 "loop": false,
 "name": &"default_door",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1odag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tv00t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3i1o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l82cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i5d8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ll7xy")
+}],
+"loop": false,
+"name": &"default_door_v2",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsibb"]
@@ -51,7 +81,7 @@ script = ExtResource("1_qpiwj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aoelo")
-animation = &"default_door"
+animation = &"default_door_v2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 0)
@@ -64,5 +94,9 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(4, 0)
 shape = SubResource("CapsuleShape2D_kbass")
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_wfho8")
+volume_db = -20.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

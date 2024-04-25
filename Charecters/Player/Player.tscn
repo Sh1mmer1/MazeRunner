@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ca4jhs7rwnae1"]
+[gd_scene load_steps=36 format=3 uid="uid://ca4jhs7rwnae1"]
 
 [ext_resource type="Script" path="res://Charecters/Player/Player.gd" id="1_n0hds"]
 [ext_resource type="Texture2D" uid="uid://bnyu0163fvifg" path="res://Assets/Astronaut - player/astronaut_death/alien_death09.png" id="2_110du"]
@@ -27,6 +27,8 @@
 [ext_resource type="AudioStream" uid="uid://d06ny7ypsx817" path="res://sounds tracks/snd_footsteps_concrete-36690.mp3" id="25_g74ga"]
 [ext_resource type="AudioStream" uid="uid://cy37ktjjn0qxe" path="res://sounds tracks/male-death-sound-128357.mp3" id="26_intwu"]
 [ext_resource type="Script" path="res://Charecters/Player/ShootRange.gd" id="27_5dmk2"]
+[ext_resource type="AudioStream" uid="uid://t3j2q7yrnc0p" path="res://sounds tracks/pick-up.mp3" id="28_e4654"]
+[ext_resource type="AudioStream" uid="uid://xqe7pavpxw46" path="res://sounds tracks/8-bit-video-game-lose-sound-version-1-145828.mp3" id="29_rr8t1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lh41"]
 radius = 22.0
@@ -202,5 +204,13 @@ collision_mask = 9
 position = Vector2(-0.5, -10.5)
 shape = SubResource("RectangleShape2D_wphys")
 script = ExtResource("27_5dmk2")
+
+[node name="PickUpItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_e4654")
+volume_db = -20.0
+
+[node name="LoserAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_rr8t1")
+volume_db = -20.0
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]

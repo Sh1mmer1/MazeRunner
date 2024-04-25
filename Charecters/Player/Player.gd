@@ -72,6 +72,7 @@ func die():
 		animated_sprite.visible = false
 		body_sprite.visible = true
 		animation_player.play("death")
+		$LoserAudio.play()
 		Events.gameOver.emit()
 
 func set_speed(new_speed: float): 
@@ -86,6 +87,7 @@ func _on_range_body_entered(body):
 
 func _on_gun_gun_pickup(is_picked_up):
 	is_gun_picked_up = is_picked_up
+	$PickUpItem.play()
 
 func stop_player_movement():
 	is_dead = true

@@ -17,5 +17,6 @@ func _on_body_entered(body):
 			
 func card_count_is_one():
 	if not is_open:
-		door.play("default_door")
+		door.play("default_door_v2")
 		is_open = true
+		$DoorOpening.play()

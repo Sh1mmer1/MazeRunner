@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://btoxlbpbm77kt"]
+[gd_scene load_steps=3 format=3 uid="uid://btoxlbpbm77kt"]
 
 [ext_resource type="Script" path="res://World/game_over.gd" id="1_nwbyv"]
+[ext_resource type="AudioStream" uid="uid://xqe7pavpxw46" path="res://sounds tracks/8-bit-video-game-lose-sound-version-1-145828.mp3" id="2_eup7t"]
 
 [node name="gameOver" type="CanvasLayer"]
 script = ExtResource("1_nwbyv")
@@ -45,6 +46,9 @@ offset_top = 372.0
 offset_right = 713.0
 offset_bottom = 422.0
 text = "Back to Main Menu"
+
+[node name="LoserAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_eup7t")
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

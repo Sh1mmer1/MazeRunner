@@ -7,6 +7,9 @@ var player_chase: bool = false
 var player: Player = null
 var alien_is_dead: bool = false
 
+func _ready():
+	$AnimatedSprite2D.play("idle")
+	
 func _physics_process(delta):
 	if player_chase and player != null:
 		var direction = (player.global_position - global_position).normalized()
@@ -17,8 +20,9 @@ func _physics_process(delta):
 
 func _on_detection_area_body_entered(body):
 	if body is Player:
-		player = body
-		player_chase = true
+		if not alien_is_dead:
+			player = body
+			player_chase = true
 
 
 func _on_detection_area_body_exited(body):

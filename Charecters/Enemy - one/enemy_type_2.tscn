@@ -1,0 +1,199 @@
+[gd_scene load_steps=34 format=3 uid="uid://cpyl77s2bo3oq"]
+
+[ext_resource type="Script" path="res://EnemyType2.gd" id="1_v38w1"]
+[ext_resource type="Texture2D" uid="uid://cvdk72vjeuwis" path="res://Assets/Alien - enemy/Alien - death/alien_death03.png" id="2_5hj27"]
+[ext_resource type="Texture2D" uid="uid://cacx360od253i" path="res://Assets/Alien - enemy/Alien - death/alien_death04.png" id="3_p14pn"]
+[ext_resource type="Texture2D" uid="uid://cry7pgn1blbqh" path="res://Assets/Alien - enemy/Alien - death/alien_death05.png" id="4_5ewj2"]
+[ext_resource type="Texture2D" uid="uid://dkyyrufmen1sw" path="res://Assets/Alien - enemy/Alien - death/alien_death06.png" id="5_nrwud"]
+[ext_resource type="Texture2D" uid="uid://chjshl3pbeunq" path="res://Assets/Alien - enemy/Alien - death/alien_death07.png" id="6_1k2bn"]
+[ext_resource type="Texture2D" uid="uid://ddbgoyf1bldy5" path="res://Assets/Alien - enemy/Alien - death/alien_death08.png" id="7_3jrb4"]
+[ext_resource type="Texture2D" uid="uid://cjb217j8dvmip" path="res://Assets/Alien - enemy/Alien - death/alien_death09.png" id="8_l5ce5"]
+[ext_resource type="Texture2D" uid="uid://cqin6rotu6eeo" path="res://Assets/Alien - enemy/Alien - death/alien_death10.png" id="9_6lxv8"]
+[ext_resource type="Texture2D" uid="uid://boqax7bifin4a" path="res://Assets/Alien - enemy/Alien - death/alien_death11.png" id="10_cjch8"]
+[ext_resource type="Texture2D" uid="uid://dw06en48ousxm" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front0.png" id="11_stpqg"]
+[ext_resource type="Texture2D" uid="uid://dnbm5crygeffu" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front1.png" id="12_iqb7a"]
+[ext_resource type="Texture2D" uid="uid://b1nfvsqkblyp7" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front2.png" id="13_m2j33"]
+[ext_resource type="Texture2D" uid="uid://ct35aye8buw78" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front3.png" id="14_fsj2e"]
+[ext_resource type="Texture2D" uid="uid://ct8flrnorve74" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front4.png" id="15_wqnbj"]
+[ext_resource type="Texture2D" uid="uid://h7twt3xlo1l3" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front5.png" id="16_bl4j3"]
+[ext_resource type="Texture2D" uid="uid://jojhokmuxubd" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front6.png" id="17_tgghq"]
+[ext_resource type="Texture2D" uid="uid://4sy6l1p7qcuw" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front7.png" id="18_kdle5"]
+[ext_resource type="Texture2D" uid="uid://tfmqjrlwajlu" path="res://Assets/Alien - enemy/Alien - movement/alien front/alien_front8.png" id="19_swo3m"]
+[ext_resource type="AudioStream" uid="uid://i2htpg7odryg" path="res://sounds tracks/alien-screaming-82512.mp3" id="20_bn77h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dar6w"]
+atlas = ExtResource("11_stpqg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tugbp"]
+atlas = ExtResource("12_iqb7a")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hx67"]
+atlas = ExtResource("13_m2j33")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5iuk"]
+atlas = ExtResource("14_fsj2e")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs1tp"]
+atlas = ExtResource("15_wqnbj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu272"]
+atlas = ExtResource("16_bl4j3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b01ly"]
+atlas = ExtResource("17_tgghq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftfc5"]
+atlas = ExtResource("18_kdle5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2ewp"]
+atlas = ExtResource("19_swo3m")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rqut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5hj27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p14pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5ewj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nrwud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1k2bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3jrb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l5ce5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6lxv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cjch8")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dar6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tugbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hx67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5iuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs1tp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu272")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b01ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftfc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2ewp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5320"]
+radius = 82.5545
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o4amq"]
+radius = 26.0
+height = 86.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6e1aa"]
+radius = 35.0
+height = 70.0
+
+[node name="EnemyType2" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent")]
+collision_layer = 8
+collision_mask = 22
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_v38w1")
+nav_agent = NodePath("Navigation/NavigationAgent2D")
+
+[node name="enemy_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 3)
+sprite_frames = SubResource("SpriteFrames_2rqut")
+animation = &"death"
+
+[node name="detection_area" type="Area2D" parent="enemy_animation"]
+collision_layer = 8
+collision_mask = 9
+
+[node name="Detection" type="CollisionShape2D" parent="enemy_animation/detection_area"]
+visible = false
+position = Vector2(0, 18)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_g5320")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="Interaction" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_o4amq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 17)
+shape = SubResource("CapsuleShape2D_6e1aa")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_bn77h")
+volume_db = -30.0
+
+[node name="Navigation" type="Node2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Navigation"]
+navigation_layers = 2
+avoidance_enabled = true
+radius = 200.0
+avoidance_layers = 2
+avoidance_mask = 2
+debug_enabled = true
+
+[node name="RecalculateTimer" type="Timer" parent="Navigation"]
+wait_time = 0.1
+autostart = true
+
+[connection signal="body_entered" from="enemy_animation/detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="enemy_animation/detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Navigation/RecalculateTimer" to="." method="_on_recalculate_timer_timeout"]
