@@ -19,13 +19,12 @@ func show_game_over():
 func stop_player_movement():
 	player.stop_player_movement()
 	
-@export var pause_menu_packed_scene : PackedScene = null
-@onready var pause = $CanvasLayer2 as CanvasLayer
 
-func _unhandled_key_input(event) -> void:
-	if event.is_action("pause"):
-		var new_pause_menu : PauseMenu = pause_menu_packed_scene.instantiate()
+@onready var pause_menu = $TileMap/Player/Camera2D2/PauseMenu
+var paused = false
+
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = not get_tree().paused
+		pause_menu.visible = not pause_menu.visible
 		
-		pause.add_child(new_pause_menu)
-
-
