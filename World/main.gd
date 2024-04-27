@@ -4,6 +4,7 @@ extends Node2D
 @onready var gameOver = $CanvasLayer/gameOver
 @onready var player = $TileMap/Player
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
 	Events.victory.connect(show_victory)
 	Events.gameOver.connect(show_game_over)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bygtfjv33rcd6"]
+
+[ext_resource type="AudioStream" uid="uid://dcpx7s6ng4i58" path="res://sounds tracks/spaceship-ambience-with-effects-21420.mp3" id="1_2jjix"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_2jjix")
+autoplay = true

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://boafb2bqcfju3"]
+
+[ext_resource type="AudioStream" uid="uid://bqy0fu88eoue4" path="res://sounds tracks/winsquare-6993.mp3" id="1_lp15e"]
+
+[node name="VictoryAudio" type="AudioStreamPlayer"]
+stream = ExtResource("1_lp15e")
+autoplay = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://b7nus3b8yr4y2"]
+[gd_scene load_steps=67 format=3 uid="uid://b7nus3b8yr4y2"]
 
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="1_5eya8"]
 [ext_resource type="Texture2D" uid="uid://bntku8k33s56k" path="res://Assets/Map - Space/SpaceWalls/atlasas.png" id="1_k12qa"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://lrhuypc4bffa" path="res://World/door.tscn" id="17_dcttw"]
 [ext_resource type="PackedScene" uid="uid://btoxlbpbm77kt" path="res://World/game_over.tscn" id="18_jgagm"]
 [ext_resource type="PackedScene" uid="uid://cpyl77s2bo3oq" path="res://Charecters/Enemy - one/enemy_type_2.tscn" id="19_v4n8y"]
+[ext_resource type="PackedScene" uid="uid://bygtfjv33rcd6" path="res://World/SpaceShipAmbience.tscn" id="20_ltsno"]
 [ext_resource type="PackedScene" uid="uid://ktr4lcc66sa4" path="res://PauseMenu/pause_menu.tscn" id="20_sswnn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_r3n4c"]
@@ -973,6 +974,9 @@ collision_layer = 2
 [node name="EnemyType2" parent="TileMap" instance=ExtResource("19_v4n8y")]
 position = Vector2(-558, 122)
 scale = Vector2(0.5, 0.5)
+
+[node name="AmbienceAudio" parent="TileMap" instance=ExtResource("20_ltsno")]
+volume_db = -25.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

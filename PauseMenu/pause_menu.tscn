@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ktr4lcc66sa4"]
+[gd_scene load_steps=3 format=3 uid="uid://ktr4lcc66sa4"]
 
 [ext_resource type="Script" path="res://PauseMenu/pause_menu.gd" id="1_3kdnr"]
+[ext_resource type="AudioStream" uid="uid://da4s37lc16eff" path="res://sounds tracks/analog-appliance-button-15-186961.mp3" id="2_dbycm"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -55,6 +56,10 @@ text = "Quit to main menu"
 [node name="QuitGame" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dbycm")
+volume_db = -20.0
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_button_down"]

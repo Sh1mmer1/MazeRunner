@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b1jsfhxuygo4j"]
+[gd_scene load_steps=16 format=3 uid="uid://b1jsfhxuygo4j"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_ui2eb"]
 [ext_resource type="Texture2D" uid="uid://daunjx4d8v7tg" path="res://Assets/Menu/play.png" id="2_slke0"]
@@ -10,6 +10,8 @@
 [ext_resource type="VideoStream" path="res://Assets/Menu/menuBg.ogv" id="9_fjyrd"]
 [ext_resource type="Texture2D" uid="uid://dfjeduqlby7io" path="res://Assets/Menu/exitHover.png" id="9_fu1qn"]
 [ext_resource type="AudioStream" uid="uid://b5o2qmbwkxedq" path="res://sounds tracks/wandering-6394.mp3" id="10_au8ux"]
+[ext_resource type="AudioStream" uid="uid://brd2p05btpscc" path="res://sounds tracks/game-start-6104.mp3" id="11_j0dqi"]
+[ext_resource type="AudioStream" uid="uid://da4s37lc16eff" path="res://sounds tracks/analog-appliance-button-15-186961.mp3" id="12_3qdkn"]
 
 [sub_resource type="Animation" id="Animation_2dnyy"]
 resource_name = "menu"
@@ -106,6 +108,14 @@ loop = true
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_au8ux")
+volume_db = -20.0
+
+[node name="StartingAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_j0dqi")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("12_3qdkn")
 volume_db = -20.0
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

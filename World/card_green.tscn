@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqbrmyn4aod5b"]
+[gd_scene load_steps=10 format=3 uid="uid://dqbrmyn4aod5b"]
 
 [ext_resource type="Texture2D" uid="uid://bcsnfa8vjbg1p" path="res://Assets/Key cards/keycard_green0.png" id="1_e2fd1"]
 [ext_resource type="Script" path="res://World/card_green.gd" id="1_ymgiu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://pwkpx01tkkrn" path="res://Assets/Key cards/keycard_green2.png" id="3_6grq4"]
 [ext_resource type="Texture2D" uid="uid://b0lcam8b1gb1a" path="res://Assets/Key cards/keycard_green3.png" id="4_ajtcx"]
 [ext_resource type="Texture2D" uid="uid://udbj0pjxwfq6" path="res://Assets/Key cards/keycard_green4.png" id="5_kywtn"]
+[ext_resource type="AudioStream" uid="uid://t3j2q7yrnc0p" path="res://sounds tracks/pick-up.mp3" id="7_dn76e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eye41"]
 animations = [{
@@ -45,3 +46,7 @@ animation = &"green_card_"
 visible = false
 position = Vector2(-2, 5.5)
 shape = SubResource("RectangleShape2D_1lh2b")
+
+[node name="PickUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_dn76e")
+volume_db = -20.0
