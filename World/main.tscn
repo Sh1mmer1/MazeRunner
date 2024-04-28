@@ -972,7 +972,7 @@ theme = ExtResource("16_wfti7")
 process_mode = 1
 
 [node name="Gun" parent="TileMap/Gun" instance=ExtResource("14_acdem")]
-position = Vector2(-347, 134)
+position = Vector2(116, -61)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("15_g1gkp")
 
@@ -988,6 +988,11 @@ collision_layer = 2
 [node name="EnemyType2" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
 position = Vector2(-558, 122)
+scale = Vector2(0.5, 0.5)
+
+[node name="EnemyType3" parent="TileMap" instance=ExtResource("19_v4n8y")]
+process_mode = 1
+position = Vector2(-555, -2)
 scale = Vector2(0.5, 0.5)
 
 [node name="AmbienceAudio" parent="TileMap" instance=ExtResource("20_ltsno")]

@@ -6,14 +6,14 @@ class_name EnemyType2
 @onready var player: Player = null
 var player_chase: bool = false
 var alien_is_dead: bool = false
-@export var nav_agent: NavigationAgent2D
+@onready var nav_agent = $Navigation/NavigationAgent2D
 
 func _ready():
 	$enemy_animation.play("idle")
 	player = $"../Player"
 
 func _physics_process(_delta):
-	if not alien_is_dead and player != null:
+	if not alien_is_dead and player != null and not player.is_dead:
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction*speed
 		player_chase = true
@@ -21,7 +21,7 @@ func _physics_process(_delta):
 
 
 func recalc_path():
-	if not alien_is_dead and player:
+	if not alien_is_dead and player and not player.is_dead:
 		nav_agent.target_position = player.global_position
 		
 func _on_detection_area_body_entered(body):
@@ -46,6 +46,9 @@ func dieAlien():
 		$DeathSound.play()
 		$enemy_animation.play("death")
 		velocity = Vector2.ZERO
+		player.is_gun_picked_up = false
+		await $enemy_animation.animation_finished
+		queue_free()
 
 
 func _on_gun_gun_pickup(is_picked_up):

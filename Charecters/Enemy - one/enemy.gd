@@ -8,13 +8,12 @@ var player: Player = null
 var alien_is_dead: bool = false
 
 func _ready():
-	$AnimatedSprite2D.play("idle")
+	$enemy_animation.play("idle")
 	
 func _physics_process(delta):
 	if player_chase and player != null:
 		var direction = (player.global_position - global_position).normalized()
 		position += direction*speed*delta
-		$AnimatedSprite2D.play("idle")
 	move_and_slide()
 
 
@@ -42,7 +41,9 @@ func dieAlien():
 		player_chase = false
 		alien_is_dead = true
 		$DeathSound.play()
-		$AnimatedSprite2D.play("death")
+		$enemy_animation.play("death")
+		await $enemy_animation.animation_finished
+		queue_free()
 
 
 func _on_gun_gun_pickup(is_picked_up):

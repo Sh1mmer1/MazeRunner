@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://copc61xrqdf07" path="res://Assets/Lasertrap/lasertrap_off2.png" id="4_u3v1w"]
 [ext_resource type="Texture2D" uid="uid://d4nwh4y3hvn3j" path="res://Assets/Lasertrap/lasertrap_off3.png" id="5_o2tly"]
 [ext_resource type="Script" path="res://World/LaserDisable.gd" id="6_h2spf"]
-[ext_resource type="Texture2D" uid="uid://3arudqhdlh26" path="res://Assets/temp.png" id="6_wtksx"]
+[ext_resource type="Texture2D" uid="uid://cmmr30vvritkb" path="res://Assets/Lasertrap/sprite_lever0.png" id="7_1konb"]
+[ext_resource type="Texture2D" uid="uid://dskrn1wftem5p" path="res://Assets/Lasertrap/sprite_lever1.png" id="8_j807w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xn46c"]
 size = Vector2(23, 188)
@@ -31,19 +32,8 @@ _data = {
 "default": SubResource("Animation_jupu5")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1ey2g"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_wtksx")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ly2u"]
-size = Vector2(51, 47)
+size = Vector2(94, 67)
 
 [node name="GlobalSignal" type="Node2D"]
 
@@ -65,16 +55,20 @@ libraries = {
 [node name="LaserDisable" type="Area2D" parent="."]
 script = ExtResource("6_h2spf")
 
-[node name="OffButton" type="AnimatedSprite2D" parent="LaserDisable"]
+[node name="OffButton" type="Sprite2D" parent="LaserDisable"]
+visible = false
 light_mask = 2
 visibility_layer = 2
-position = Vector2(172, 235.5)
-scale = Vector2(4.625, 4.65625)
-sprite_frames = SubResource("SpriteFrames_1ey2g")
+position = Vector2(162, 215)
+texture = ExtResource("7_1konb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LaserDisable"]
-position = Vector2(162.5, 221)
+position = Vector2(164, 220.5)
 shape = SubResource("RectangleShape2D_6ly2u")
+
+[node name="OnButton" type="Sprite2D" parent="LaserDisable"]
+position = Vector2(162, 215)
+texture = ExtResource("8_j807w")
 
 [connection signal="body_entered" from="Laser" to="Laser" method="_on_body_entered"]
 [connection signal="body_entered" from="LaserDisable" to="Laser" method="_on_laser_disable_body_entered"]

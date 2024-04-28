@@ -1,12 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmo3a10xt0rid"]
+[gd_scene load_steps=10 format=3 uid="uid://dmo3a10xt0rid"]
 
-[ext_resource type="Texture2D" uid="uid://cidjxud6j7gyt" path="res://Assets/Gun/ginklas-1.png" id="1_w5a3g"]
+[ext_resource type="Texture2D" uid="uid://46s15loj0iuq" path="res://Assets/Gun/gun0.png" id="1_46tfq"]
+[ext_resource type="Texture2D" uid="uid://bqnalfdjdp1lf" path="res://Assets/Gun/gun1.png" id="2_fp4b8"]
+[ext_resource type="Texture2D" uid="uid://dviqb3ed54igq" path="res://Assets/Gun/gun2.png" id="3_ltpbw"]
+[ext_resource type="Texture2D" uid="uid://dffvowtmshje4" path="res://Assets/Gun/gun3.png" id="4_yyrro"]
+[ext_resource type="Texture2D" uid="uid://bf5rynjsdgd44" path="res://Assets/Gun/gun4.png" id="5_aqeqq"]
+[ext_resource type="Texture2D" uid="uid://s3tvhy2wwm7k" path="res://Assets/Gun/gun5.png" id="6_owe03"]
+[ext_resource type="Texture2D" uid="uid://dlwjcs4klxptc" path="res://Assets/Gun/gun6.png" id="7_qoskg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dedy8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_w5a3g")
+"texture": ExtResource("1_46tfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fp4b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ltpbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yyrro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aqeqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_owe03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qoskg")
 }],
 "loop": true,
 "name": &"default_gun",

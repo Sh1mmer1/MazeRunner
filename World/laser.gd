@@ -5,6 +5,8 @@ extends Area2D
 var player: Player = null
 var on: bool = true
 var animation_finished: bool = true
+@onready var offButton = $"../LaserDisable/OffButton"
+@onready var onButton = $"../LaserDisable/OnButton"
 
 func _process(delta):
 	if on == false and animation_finished == true:
@@ -25,3 +27,5 @@ func _on_laser_animation_finished():
 
 func _on_laser_disable_body_entered(body):
 	on = false
+	onButton.visible = false
+	offButton.visible = true
