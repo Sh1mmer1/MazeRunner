@@ -1,38 +1,39 @@
 extends CharacterBody2D
 
-class_name EnemyType1
+class_name EnemyType2
 
 @export var speed = 100
 @onready var player: Player = null
 var player_chase: bool = false
 var alien_is_dead: bool = false
 @onready var nav_agent = $Navigation/NavigationAgent2D
+var home_pos = Vector2.ZERO
+var target_node = null
 
 func _ready():
 	$enemy_animation.play("idle")
 	player = $"../Player"
+	home_pos = self.global_position
+	nav_agent.path_desired_distance = 4
+	nav_agent.target_desired_distance = 4
 
 func _physics_process(_delta):
 	if not alien_is_dead and player != null and not player.is_dead:
+		if nav_agent.is_navigation_finished():
+			return
+			
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction*speed
-		player_chase = true
+
 		move_and_slide()
 
 
 func recalc_path():
-	if not alien_is_dead and player and not player.is_dead:
-		nav_agent.target_position = player.global_position
+	if not alien_is_dead and player and not player.is_dead and target_node:
+		nav_agent.target_position = target_node.global_position
+	else:
+		nav_agent.target_position = home_pos
 		
-func _on_detection_area_body_entered(body):
-	pass
-
-
-
-func _on_detection_area_body_exited(body):
-	pass
-	
-
 
 func _on_area_2d_body_entered(body):
 	if not alien_is_dead:
@@ -47,8 +48,9 @@ func dieAlien():
 		$enemy_animation.play("death")
 		velocity = Vector2.ZERO
 		player.is_gun_picked_up = false
-		await $enemy_animation.animation_finished
 		queue_free()
+		await $enemy_animation.animation_finished
+		#queue_free() <- pakeist poto
 
 
 func _on_gun_gun_pickup(is_picked_up):
@@ -57,3 +59,16 @@ func _on_gun_gun_pickup(is_picked_up):
 
 func _on_recalculate_timer_timeout():
 	recalc_path()
+
+
+
+func _on_detection_area_area_entered(area):
+	target_node = area.owner
+	print("Entr")
+
+func _on_not_detection_area_area_exited(area):
+	print("Leav")
+	if area.owner == target_node:
+		target_node = null
+
+

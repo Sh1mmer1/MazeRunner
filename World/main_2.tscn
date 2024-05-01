@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1o8k3fu2daei"]
+
+[ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="2_ravjw"]
+[ext_resource type="Texture2D" uid="uid://c5a75oilnxppc" path="res://Assets/Map - lvl2/tile_main_v2222.png" id="3_1i12u"]
+[ext_resource type="PackedScene" uid="uid://crgynbxlgkicu" path="res://pause_menu.tscn" id="3_ayt6e"]
+[ext_resource type="Theme" uid="uid://dw8bd56pouxai" path="res://UI/game_theme.tres" id="4_fnv0n"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ucex"]
+texture = ExtResource("3_1i12u")
+0:0/size_in_atlas = Vector2i(16, 16)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vm5l6"]
+sources/2 = SubResource("TileSetAtlasSource_6ucex")
+
+[node name="main2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_vm5l6")
+format = 2
+layer_0/tile_data = PackedInt32Array(262152, 2, 0, 262168, 2, 0, 327672, 2, 0, 1376248, 2, 0, 1310728, 2, 0, 1310744, 2, 0)
+
+[node name="Player" parent="TileMap" instance=ExtResource("2_ravjw")]
+position = Vector2(136, 84)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D2" type="Camera2D" parent="TileMap/Player"]
+
+[node name="PauseMenu" parent="TileMap/Player/Camera2D2" instance=ExtResource("3_ayt6e")]
+visible = false
+scale = Vector2(2.9, 2.9)
+pivot_offset = Vector2(0, 2)
+theme = ExtResource("4_fnv0n")
