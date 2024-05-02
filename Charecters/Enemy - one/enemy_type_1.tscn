@@ -24,9 +24,8 @@ radius = 124.036
 [sub_resource type="CircleShape2D" id="CircleShape2D_8idmn"]
 radius = 102.044
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hapab"]
-radius = 85.0
-height = 170.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_nseb2"]
+radius = 224.056
 
 [node name="EnemyType1" type="CharacterBody2D"]
 collision_layer = 8
@@ -60,7 +59,7 @@ shape = SubResource("CircleShape2D_8idmn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_hapab")
+shape = SubResource("CircleShape2D_nseb2")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_0bp3u")

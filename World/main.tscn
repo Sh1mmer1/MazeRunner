@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b7nus3b8yr4y2"]
+[gd_scene load_steps=70 format=3 uid="uid://b7nus3b8yr4y2"]
 
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="1_5eya8"]
 [ext_resource type="Texture2D" uid="uid://bntku8k33s56k" path="res://Assets/Map - Space/SpaceWalls/atlasas.png" id="1_k12qa"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cpyl77s2bo3oq" path="res://Charecters/Enemy - one/enemy_type_2.tscn" id="19_v4n8y"]
 [ext_resource type="PackedScene" uid="uid://bygtfjv33rcd6" path="res://World/SpaceShipAmbience.tscn" id="20_ltsno"]
 [ext_resource type="PackedScene" uid="uid://cptp1gxwspwny" path="res://Charecters/Enemy - one/enemy_type_1.tscn" id="21_4l85l"]
+[ext_resource type="PackedScene" uid="uid://c7o7d8pp8r4vd" path="res://Charecters/Enemy - one/enemy_type_3.tscn" id="22_o6amh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_r3n4c"]
 vertices = PackedVector2Array(-3, 3, 0, 3, 0, 12, -12, 12, -12, 0, -3, 0)
@@ -909,6 +910,12 @@ sources/3 = SubResource("TileSetAtlasSource_fpau2")
 sources/4 = SubResource("TileSetAtlasSource_quveb")
 sources/7 = SubResource("TileSetAtlasSource_kkfuw")
 
+[sub_resource type="Curve2D" id="Curve2D_p2tbx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -757, 606, 0, 0, 0, 0, -115, 606, 0, 0, 0, 0, -117, 496, 0, 0, 0, 0, -65, 489, 0, 0, 0, 0, -66, 345, 0, 0, 0, 0, -131, 345, 0, 0, 0, 0, -134, 409, 0, 0, 0, 0, -421, 413, 0, 0, 0, 0, -418, 272, 0, 0, 0, 0, -755, 267, 0, 0, 0, 0, -757, 606)
+}
+point_count = 11
+
 [node name="Main" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_lyl1f")
@@ -966,7 +973,7 @@ theme = ExtResource("16_wfti7")
 process_mode = 1
 
 [node name="Gun" parent="TileMap/Gun" instance=ExtResource("14_acdem")]
-position = Vector2(-395, -161)
+position = Vector2(-85, 122)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("15_g1gkp")
 
@@ -981,20 +988,33 @@ collision_layer = 2
 
 [node name="EnemyType2" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
-position = Vector2(-494, -132)
+position = Vector2(-664, -587)
 scale = Vector2(0.5, 0.5)
 
 [node name="EnemyType3" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
-position = Vector2(-618, -69)
+position = Vector2(-720, -539)
 scale = Vector2(0.5, 0.5)
 
 [node name="AmbienceAudio" parent="TileMap" instance=ExtResource("20_ltsno")]
 volume_db = -25.0
 
 [node name="EnemyType1" parent="TileMap" instance=ExtResource("21_4l85l")]
-position = Vector2(86, 296)
+position = Vector2(67, -521)
 scale = Vector2(0.1, 0.1)
+
+[node name="Sleepy" type="Node2D" parent="TileMap"]
+
+[node name="Path2D" type="Path2D" parent="TileMap/Sleepy"]
+curve = SubResource("Curve2D_p2tbx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TileMap/Sleepy/Path2D"]
+position = Vector2(-757, 606)
+scale = Vector2(0.1, 0.1)
+rotates = false
+
+[node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") instance=ExtResource("22_o6amh")]
+path_follow_node = NodePath("..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
