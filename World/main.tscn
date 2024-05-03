@@ -973,7 +973,7 @@ theme = ExtResource("16_wfti7")
 process_mode = 1
 
 [node name="Gun" parent="TileMap/Gun" instance=ExtResource("14_acdem")]
-position = Vector2(-85, 122)
+position = Vector2(174, -42)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("15_g1gkp")
 
@@ -1000,7 +1000,7 @@ scale = Vector2(0.5, 0.5)
 volume_db = -25.0
 
 [node name="EnemyType1" parent="TileMap" instance=ExtResource("21_4l85l")]
-position = Vector2(67, -521)
+position = Vector2(88, 334)
 scale = Vector2(0.1, 0.1)
 
 [node name="Sleepy" type="Node2D" parent="TileMap"]

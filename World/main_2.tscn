@@ -1,24 +1,64 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1o8k3fu2daei"]
+[gd_scene load_steps=19 format=3 uid="uid://c1o8k3fu2daei"]
 
+[ext_resource type="Texture2D" uid="uid://br8rjxqbopw2b" path="res://Assets/Map - lvl3/sprite_map30.png" id="1_y2dqg"]
+[ext_resource type="Texture2D" uid="uid://cwxjncestsv4u" path="res://Assets/Map - lvl3/sprite_map31.png" id="2_70i60"]
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="2_ravjw"]
 [ext_resource type="Texture2D" uid="uid://c5a75oilnxppc" path="res://Assets/Map - lvl2/tile_main_v2222.png" id="3_1i12u"]
 [ext_resource type="PackedScene" uid="uid://crgynbxlgkicu" path="res://pause_menu.tscn" id="3_ayt6e"]
 [ext_resource type="Theme" uid="uid://dw8bd56pouxai" path="res://UI/game_theme.tres" id="4_fnv0n"]
+[ext_resource type="Texture2D" uid="uid://b03odot80i8kf" path="res://Assets/Map - lvl3/sprite_map32.png" id="4_gbwcq"]
+[ext_resource type="Texture2D" uid="uid://df188ilnh5tfi" path="res://Assets/Map - lvl3/sprite_map33.png" id="5_cw8w5"]
+[ext_resource type="Texture2D" uid="uid://c1viho4h5b1hh" path="res://Assets/Map - lvl3/sprite_map34.png" id="6_s1p6v"]
+[ext_resource type="Texture2D" uid="uid://wvff32j6ip1t" path="res://Assets/Map - lvl3/sprite_map35.png" id="7_ltmj4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wnbww"]
+texture = ExtResource("1_y2dqg")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rw0i"]
+texture = ExtResource("2_70i60")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ucex"]
 texture = ExtResource("3_1i12u")
 0:0/size_in_atlas = Vector2i(16, 16)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d4l6m"]
+texture = ExtResource("4_gbwcq")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2utij"]
+texture = ExtResource("5_cw8w5")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fo2b"]
+texture = ExtResource("6_s1p6v")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yi3p0"]
+texture = ExtResource("7_ltmj4")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_vm5l6"]
 sources/2 = SubResource("TileSetAtlasSource_6ucex")
+sources/0 = SubResource("TileSetAtlasSource_wnbww")
+sources/1 = SubResource("TileSetAtlasSource_6rw0i")
+sources/3 = SubResource("TileSetAtlasSource_d4l6m")
+sources/4 = SubResource("TileSetAtlasSource_2utij")
+sources/5 = SubResource("TileSetAtlasSource_7fo2b")
+sources/6 = SubResource("TileSetAtlasSource_yi3p0")
 
 [node name="main2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_vm5l6")
 format = 2
-layer_0/tile_data = PackedInt32Array(262152, 2, 0, 262168, 2, 0, 327672, 2, 0, 1376248, 2, 0, 1310728, 2, 0, 1310744, 2, 0)
+layer_0/tile_data = PackedInt32Array(196611, 6, 0, 720899, 5, 0, 196619, 4, 0, 1245187, 3, 0, 720907, 0, 0, 1245195, 0, 0)
 
 [node name="Player" parent="TileMap" instance=ExtResource("2_ravjw")]
 position = Vector2(136, 84)
