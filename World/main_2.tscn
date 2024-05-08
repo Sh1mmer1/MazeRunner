@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://c1o8k3fu2daei"]
+[gd_scene load_steps=90 format=3 uid="uid://c1o8k3fu2daei"]
 
 [ext_resource type="Texture2D" uid="uid://d0aujp6lee620" path="res://Assets/Map - lvl3/map3tile_03.png" id="1_8bg48"]
 [ext_resource type="Texture2D" uid="uid://custhsauwd2vn" path="res://Assets/Map - lvl3/map3tile_04.png" id="2_fy2px"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://prp26bdefuk0" path="res://Assets/Map - lvl3/mapas-23.png.png" id="25_wtdny"]
 [ext_resource type="Texture2D" uid="uid://d2ado1mv78qsh" path="res://Assets/Map - lvl3/mapas-24.png.png" id="26_ael27"]
 [ext_resource type="Texture2D" uid="uid://bmhissnovav8o" path="res://Assets/Map - lvl3/image-1.png" id="27_744e7"]
+[ext_resource type="PackedScene" uid="uid://dmo3a10xt0rid" path="res://World/gun.tscn" id="31_4n1dy"]
+[ext_resource type="Script" path="res://World/gun.gd" id="32_r2661"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gcx6s"]
 
@@ -23317,3 +23319,13 @@ theme = ExtResource("4_fnv0n")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/Player"]
 position = Vector2(2, -20)
 shape = SubResource("RectangleShape2D_vduaw")
+
+[node name="Gun" type="Node2D" parent="TileMap"]
+process_mode = 1
+
+[node name="Gun" parent="TileMap/Gun" instance=ExtResource("31_4n1dy")]
+position = Vector2(-1662, 386)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("32_r2661")
+
+[connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]

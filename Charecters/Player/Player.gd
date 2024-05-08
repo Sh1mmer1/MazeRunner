@@ -90,6 +90,7 @@ func die():
 		body_sprite.visible = true
 		animation_player.play("death")
 		$LoserAudio.play()
+		await animation_player.animation_finished
 		Events.gameOver.emit()
 
 
