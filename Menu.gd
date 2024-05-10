@@ -3,7 +3,7 @@ extends Control
 
 func _on_play_pressed():
 	$ButtonClick.play()
-	get_tree().change_scene_to_file("res://World/main.tscn")
+	get_tree().change_scene_to_file("res://UI/levelmenu.tscn")
 
 func _on_levels_pressed():
 	$ButtonClick.play()
