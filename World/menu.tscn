@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://b1jsfhxuygo4j"]
+[gd_scene load_steps=17 format=3 uid="uid://b1jsfhxuygo4j"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_ui2eb"]
 [ext_resource type="Texture2D" uid="uid://daunjx4d8v7tg" path="res://Assets/Menu/play.png" id="2_slke0"]
 [ext_resource type="Texture2D" uid="uid://cbth33pwc2ak1" path="res://Assets/Menu/exit.png" id="3_j871g"]
 [ext_resource type="Texture2D" uid="uid://bfyojuouptpd2" path="res://Assets/Menu/sett (1).png" id="4_rqytb"]
+[ext_resource type="Script" path="res://World/Settings.gd" id="5_dpcld"]
 [ext_resource type="Texture2D" uid="uid://cvrvdciv6hlle" path="res://Assets/Menu/menu2.png" id="6_5rgnc"]
 [ext_resource type="Texture2D" uid="uid://7etx6in7m4ly" path="res://Assets/Menu/menu1.png" id="7_dyydf"]
 [ext_resource type="Texture2D" uid="uid://bnn6cq7gh4xbr" path="res://Assets/Menu/playHover.png" id="7_o6vhl"]
@@ -68,6 +69,7 @@ offset_bottom = 665.0
 texture_normal = ExtResource("4_rqytb")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("5_dpcld")
 
 [node name="Play" type="TextureButton" parent="."]
 z_index = 2
@@ -118,5 +120,6 @@ process_mode = 3
 stream = ExtResource("12_3qdkn")
 volume_db = -20.0
 
+[connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
