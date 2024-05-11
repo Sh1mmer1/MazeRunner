@@ -18,16 +18,19 @@ var target_position: Vector2 = Vector2.ZERO
 @onready var animation_player = $AnimationPlayer
 @onready var collision_shape = $CollisionShape2D
 @onready var fire_timer = $FireTimer
+@onready var spaceship = $"../../Spaceship/AnimatedSprite2D"
 
 
 func _ready():
 	animated_sprite = $AnimatedSprite2D
 	body_sprite = $Body
-	
-	body_sprite.visible = true
-	animated_sprite.visible = false
-	
-	animation_player.play("idle_main")
+
+	animated_sprite.visible = false	
+	body_sprite.visible = false
+	if spaceship == null:
+		body_sprite.visible = true
+		animation_player.play("idle_main")
+		animated_sprite.visible = false
 	if is_gun_picked_up:
 		animation_player.play("idle_main_gun")
 	fire_timer.wait_time = 0.2
@@ -35,6 +38,16 @@ func _ready():
 	fire_timer.paused = false
 
 func _physics_process(delta):
+	if spaceship != null:
+		if spaceship.frame < 25:
+			is_dead = true
+		else:
+			is_dead = false
+		if spaceship.frame >= 20 and spaceship.frame != 25:
+			body_sprite.visible = true
+			animation_player.play("idle_main")
+			animated_sprite.visible = false
+
 	if not is_dead:
 		var direction = Input.get_vector("left", "right", "up", "down").normalized()
 		$Marker2D.look_at(direction)

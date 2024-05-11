@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://c1o8k3fu2daei"]
+[gd_scene load_steps=121 format=3 uid="uid://c1o8k3fu2daei"]
 
 [ext_resource type="Texture2D" uid="uid://d0aujp6lee620" path="res://Assets/Map - lvl3/map3tile_03.png" id="1_8bg48"]
 [ext_resource type="Script" path="res://World/main_2.gd" id="1_vn6tp"]
@@ -33,6 +33,33 @@
 [ext_resource type="Texture2D" uid="uid://bmhissnovav8o" path="res://Assets/Map - lvl3/image-1.png" id="27_744e7"]
 [ext_resource type="PackedScene" uid="uid://dmo3a10xt0rid" path="res://World/gun.tscn" id="31_4n1dy"]
 [ext_resource type="Script" path="res://World/gun.gd" id="32_r2661"]
+[ext_resource type="Script" path="res://World/Spaceship.gd" id="34_7723o"]
+[ext_resource type="Texture2D" uid="uid://bo2tkvfwh5lly" path="res://Assets/Spaceship/sprite_raketa_00.png" id="35_s7oag"]
+[ext_resource type="Texture2D" uid="uid://ct50knw0bkbtc" path="res://Assets/Spaceship/sprite_raketa_01.png" id="36_x65hj"]
+[ext_resource type="Texture2D" uid="uid://di0bl3o1il2la" path="res://Assets/Spaceship/sprite_raketa_02.png" id="37_ea0ww"]
+[ext_resource type="Texture2D" uid="uid://5ujmvqox3fyb" path="res://Assets/Spaceship/sprite_raketa_03.png" id="38_12ot1"]
+[ext_resource type="Texture2D" uid="uid://don11vny1uepj" path="res://Assets/Spaceship/sprite_raketa_04.png" id="39_nteyn"]
+[ext_resource type="Texture2D" uid="uid://cbu1d3m4pplla" path="res://Assets/Spaceship/sprite_raketa_05.png" id="40_25xfy"]
+[ext_resource type="Texture2D" uid="uid://d2282x1uk75mh" path="res://Assets/Spaceship/sprite_raketa_06.png" id="41_5sjk1"]
+[ext_resource type="Texture2D" uid="uid://cp6pkmsb18n27" path="res://Assets/Spaceship/sprite_raketa_07.png" id="42_cys2x"]
+[ext_resource type="Texture2D" uid="uid://dnwmmll7280qc" path="res://Assets/Spaceship/sprite_raketa_08.png" id="43_27i3q"]
+[ext_resource type="Texture2D" uid="uid://da46fjgxl44pf" path="res://Assets/Spaceship/sprite_raketa_09.png" id="44_rotnq"]
+[ext_resource type="Texture2D" uid="uid://dsiul0ixm74uo" path="res://Assets/Spaceship/sprite_raketa_10.png" id="45_4rlxg"]
+[ext_resource type="Texture2D" uid="uid://dp7uvn5xgkno5" path="res://Assets/Spaceship/sprite_raketa_11.png" id="46_k5vvp"]
+[ext_resource type="Texture2D" uid="uid://r3t6eq3van53" path="res://Assets/Spaceship/sprite_raketa_12.png" id="47_5im2f"]
+[ext_resource type="Texture2D" uid="uid://bba3dasgqwm0l" path="res://Assets/Spaceship/sprite_raketa_13.png" id="48_jdbqi"]
+[ext_resource type="Texture2D" uid="uid://dgc48ei43rygi" path="res://Assets/Spaceship/sprite_raketa_14.png" id="49_xy7a5"]
+[ext_resource type="Texture2D" uid="uid://gj7m7qrbhkcr" path="res://Assets/Spaceship/sprite_raketa_15.png" id="50_o2s12"]
+[ext_resource type="Texture2D" uid="uid://dol3x0qaw78cn" path="res://Assets/Spaceship/sprite_raketa_16.png" id="51_rk62p"]
+[ext_resource type="Texture2D" uid="uid://cuk1m7lps6l8l" path="res://Assets/Spaceship/sprite_raketa_17.png" id="52_n1cd5"]
+[ext_resource type="Texture2D" uid="uid://bj61c35mcrcst" path="res://Assets/Spaceship/sprite_raketa_18.png" id="53_hm4vy"]
+[ext_resource type="Texture2D" uid="uid://cfhuwmkcjl0ea" path="res://Assets/Spaceship/sprite_raketa_19.png" id="54_45410"]
+[ext_resource type="Texture2D" uid="uid://do0qbevsvbhe4" path="res://Assets/Spaceship/sprite_raketa_20.png" id="55_2cuol"]
+[ext_resource type="Texture2D" uid="uid://bcqvswhx4ftda" path="res://Assets/Spaceship/sprite_raketa_21.png" id="56_120wk"]
+[ext_resource type="Texture2D" uid="uid://u7p5vmlp7kyo" path="res://Assets/Spaceship/sprite_raketa_22.png" id="57_47w2w"]
+[ext_resource type="Texture2D" uid="uid://bjpt1bheixif2" path="res://Assets/Spaceship/sprite_raketa_23.png" id="58_8pa6w"]
+[ext_resource type="Texture2D" uid="uid://kmtqpan3n8b2" path="res://Assets/Spaceship/sprite_raketa_24.png" id="59_fnw47"]
+[ext_resource type="Texture2D" uid="uid://dvuub3v6gg655" path="res://Assets/Spaceship/sprite_raketa_25.png" id="60_p3dqt"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gcx6s"]
 
@@ -23296,6 +23323,100 @@ sources/48 = SubResource("TileSetAtlasSource_jtmdi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vduaw"]
 size = Vector2(48, 112)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmt1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_s7oag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_x65hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ea0ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_12ot1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_nteyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_25xfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_5sjk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_cys2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_27i3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_rotnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_4rlxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_k5vvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_5im2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_jdbqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_xy7a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_o2s12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_rk62p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_n1cd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_hm4vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_45410")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_2cuol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_120wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_47w2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_8pa6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_fnw47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_p3dqt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2280"]
+radius = 30.0
+height = 190.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rlpxv"]
+radius = 93.0
+height = 186.0
+
 [node name="main2" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_vn6tp")
@@ -23308,7 +23429,7 @@ layer_0/tile_data = PackedInt32Array(8, 12, 0, 65544, 12, 1, 131080, 12, 2, 1966
 
 [node name="Player" parent="TileMap" instance=ExtResource("2_ravjw")]
 process_mode = 1
-position = Vector2(-1607, 523)
+position = Vector2(-1607, 450)
 scale = Vector2(0.75, 0.75)
 collision_mask = 33
 
@@ -23317,6 +23438,7 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="PauseMenu" parent="TileMap/Player/Camera2D2" instance=ExtResource("3_ayt6e")]
 visible = false
+z_index = 1
 scale = Vector2(2.03589, 2.14628)
 pivot_offset = Vector2(0, 2)
 theme = ExtResource("4_fnv0n")
@@ -23329,8 +23451,38 @@ shape = SubResource("RectangleShape2D_vduaw")
 process_mode = 1
 
 [node name="Gun" parent="TileMap/Gun" instance=ExtResource("31_4n1dy")]
-position = Vector2(-1662, 386)
+position = Vector2(-2052, 711)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("32_r2661")
+
+[node name="Spaceship" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("34_7723o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Spaceship"]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-1866, -240)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hmt1t")
+frame = 25
+frame_progress = 1.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Spaceship/AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spaceship/AnimatedSprite2D/StaticBody2D"]
+position = Vector2(-40, 333)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_g2280")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Spaceship/AnimatedSprite2D/StaticBody2D"]
+position = Vector2(35.5, 332.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_g2280")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Spaceship/AnimatedSprite2D/StaticBody2D"]
+position = Vector2(-2, 308.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_rlpxv")
 
 [connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]

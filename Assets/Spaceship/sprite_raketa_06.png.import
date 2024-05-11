@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3t1bpavv6dsr"
-path="res://.godot/imported/test2.png-ce59fb62d284f3f96fbd2cfb5a265a39.ctex"
+uid="uid://d2282x1uk75mh"
+path="res://.godot/imported/sprite_raketa_06.png-e0c8bb4f791a895579cd4d564b1a7122.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map - lvl2/test2.png"
-dest_files=["res://.godot/imported/test2.png-ce59fb62d284f3f96fbd2cfb5a265a39.ctex"]
+source_file="res://Assets/Spaceship/sprite_raketa_06.png"
+dest_files=["res://.godot/imported/sprite_raketa_06.png-e0c8bb4f791a895579cd4d564b1a7122.ctex"]
 
 [params]
 

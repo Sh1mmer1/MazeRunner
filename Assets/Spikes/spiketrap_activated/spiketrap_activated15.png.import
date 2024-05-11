@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3t1bpavv6dsr"
-path="res://.godot/imported/test2.png-ce59fb62d284f3f96fbd2cfb5a265a39.ctex"
+uid="uid://cjrq4aewp8odj"
+path="res://.godot/imported/spiketrap_activated15.png-202001130d6ffe2a08c5bb48e72bd903.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map - lvl2/test2.png"
-dest_files=["res://.godot/imported/test2.png-ce59fb62d284f3f96fbd2cfb5a265a39.ctex"]
+source_file="res://Assets/Spikes/spiketrap_activated/spiketrap_activated15.png"
+dest_files=["res://.godot/imported/spiketrap_activated15.png-202001130d6ffe2a08c5bb48e72bd903.ctex"]
 
 [params]
 
