@@ -1,11 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1jsfhxuygo4j"]
+[gd_scene load_steps=20 format=3 uid="uid://b1jsfhxuygo4j"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_ui2eb"]
 [ext_resource type="Texture2D" uid="uid://daunjx4d8v7tg" path="res://Assets/Menu/play.png" id="2_slke0"]
 [ext_resource type="Texture2D" uid="uid://cbth33pwc2ak1" path="res://Assets/Menu/exit.png" id="3_j871g"]
-[ext_resource type="Texture2D" uid="uid://bfyojuouptpd2" path="res://Assets/Menu/sett (1).png" id="4_rqytb"]
+[ext_resource type="Texture2D" uid="uid://bema05e3lmjhh" path="res://Assets/Mute/mute off.png" id="4_kpna4"]
+[ext_resource type="Texture2D" uid="uid://dajx5pgt6bxba" path="res://Assets/Mute/mute on.png" id="5_o5dfn"]
 [ext_resource type="Script" path="res://World/Settings.gd" id="5_v5f05"]
 [ext_resource type="Texture2D" uid="uid://cvrvdciv6hlle" path="res://Assets/Menu/menu2.png" id="6_5rgnc"]
+[ext_resource type="Texture2D" uid="uid://clanom5sl7tfr" path="res://Assets/Mute/mute off hover.png" id="6_a8jxg"]
+[ext_resource type="Texture2D" uid="uid://cwxcakk8istjn" path="res://Assets/Mute/mute on hover.png" id="6_esh41"]
 [ext_resource type="Texture2D" uid="uid://7etx6in7m4ly" path="res://Assets/Menu/menu1.png" id="7_dyydf"]
 [ext_resource type="Texture2D" uid="uid://bnn6cq7gh4xbr" path="res://Assets/Menu/playHover.png" id="7_o6vhl"]
 [ext_resource type="VideoStream" path="res://Assets/Menu/menuBg.ogv" id="9_fjyrd"]
@@ -50,7 +53,8 @@ script = ExtResource("1_ui2eb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(578, 327)
+texture_filter = 1
+position = Vector2(575, 324)
 scale = Vector2(0.601042, 0.598148)
 texture = ExtResource("6_5rgnc")
 
@@ -62,14 +66,32 @@ libraries = {
 [node name="Settings" type="TextureButton" parent="."]
 z_index = 2
 layout_mode = 0
-offset_left = 1039.0
-offset_top = 552.0
-offset_right = 1163.0
-offset_bottom = 665.0
-texture_normal = ExtResource("4_rqytb")
+offset_left = 1032.0
+offset_top = 515.0
+offset_right = 1185.0
+offset_bottom = 672.0
+toggle_mode = true
+action_mode = 0
+keep_pressed_outside = true
+texture_normal = ExtResource("4_kpna4")
+texture_pressed = ExtResource("5_o5dfn")
+texture_hover = ExtResource("6_a8jxg")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_v5f05")
+
+[node name="TextureRect" type="TextureRect" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.299
+anchor_right = 0.667
+anchor_bottom = 0.777
+offset_left = -15.005
+offset_top = -47.943
+offset_right = 54.949
+offset_bottom = 36.011
+texture = ExtResource("6_esh41")
 
 [node name="Play" type="TextureButton" parent="."]
 z_index = 2
@@ -120,6 +142,8 @@ process_mode = 3
 stream = ExtResource("12_3qdkn")
 volume_db = -20.0
 
+[connection signal="mouse_entered" from="Settings" to="Settings" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Settings" to="Settings" method="_on_mouse_exited"]
 [connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
