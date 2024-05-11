@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://biykkss7huu4s"]
+[gd_scene load_steps=119 format=3 uid="uid://biykkss7huu4s"]
 
 [ext_resource type="Script" path="res://World/main_3.gd" id="1_6vixe"]
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="1_54a2h"]
@@ -36,6 +36,33 @@
 [ext_resource type="Theme" uid="uid://dw8bd56pouxai" path="res://UI/game_theme.tres" id="26_o7o53"]
 [ext_resource type="Texture2D" uid="uid://udkujv6ng14h" path="res://Assets/Map - lvl2/plant3.png" id="27_sw0ts"]
 [ext_resource type="Texture2D" uid="uid://c31185mwor8po" path="res://Assets/Map - lvl2/rock.png" id="28_y7bc2"]
+[ext_resource type="Script" path="res://World/Spaceship.gd" id="37_dvrfi"]
+[ext_resource type="Texture2D" uid="uid://bo2tkvfwh5lly" path="res://Assets/Spaceship/sprite_raketa_00.png" id="38_h5u1y"]
+[ext_resource type="Texture2D" uid="uid://ct50knw0bkbtc" path="res://Assets/Spaceship/sprite_raketa_01.png" id="39_f4uap"]
+[ext_resource type="Texture2D" uid="uid://di0bl3o1il2la" path="res://Assets/Spaceship/sprite_raketa_02.png" id="40_hm708"]
+[ext_resource type="Texture2D" uid="uid://5ujmvqox3fyb" path="res://Assets/Spaceship/sprite_raketa_03.png" id="41_yfylv"]
+[ext_resource type="Texture2D" uid="uid://don11vny1uepj" path="res://Assets/Spaceship/sprite_raketa_04.png" id="42_viacw"]
+[ext_resource type="Texture2D" uid="uid://cbu1d3m4pplla" path="res://Assets/Spaceship/sprite_raketa_05.png" id="43_3p54b"]
+[ext_resource type="Texture2D" uid="uid://d2282x1uk75mh" path="res://Assets/Spaceship/sprite_raketa_06.png" id="44_t17vy"]
+[ext_resource type="Texture2D" uid="uid://cp6pkmsb18n27" path="res://Assets/Spaceship/sprite_raketa_07.png" id="45_emdrt"]
+[ext_resource type="Texture2D" uid="uid://dnwmmll7280qc" path="res://Assets/Spaceship/sprite_raketa_08.png" id="46_4vlq4"]
+[ext_resource type="Texture2D" uid="uid://da46fjgxl44pf" path="res://Assets/Spaceship/sprite_raketa_09.png" id="47_wmuma"]
+[ext_resource type="Texture2D" uid="uid://dsiul0ixm74uo" path="res://Assets/Spaceship/sprite_raketa_10.png" id="48_nkg05"]
+[ext_resource type="Texture2D" uid="uid://dp7uvn5xgkno5" path="res://Assets/Spaceship/sprite_raketa_11.png" id="49_j8knb"]
+[ext_resource type="Texture2D" uid="uid://r3t6eq3van53" path="res://Assets/Spaceship/sprite_raketa_12.png" id="50_grnk5"]
+[ext_resource type="Texture2D" uid="uid://bba3dasgqwm0l" path="res://Assets/Spaceship/sprite_raketa_13.png" id="51_nwqhh"]
+[ext_resource type="Texture2D" uid="uid://dgc48ei43rygi" path="res://Assets/Spaceship/sprite_raketa_14.png" id="52_yy64w"]
+[ext_resource type="Texture2D" uid="uid://gj7m7qrbhkcr" path="res://Assets/Spaceship/sprite_raketa_15.png" id="53_xf7ry"]
+[ext_resource type="Texture2D" uid="uid://dol3x0qaw78cn" path="res://Assets/Spaceship/sprite_raketa_16.png" id="54_orlyh"]
+[ext_resource type="Texture2D" uid="uid://cuk1m7lps6l8l" path="res://Assets/Spaceship/sprite_raketa_17.png" id="55_6f1gq"]
+[ext_resource type="Texture2D" uid="uid://bj61c35mcrcst" path="res://Assets/Spaceship/sprite_raketa_18.png" id="56_os8gj"]
+[ext_resource type="Texture2D" uid="uid://cfhuwmkcjl0ea" path="res://Assets/Spaceship/sprite_raketa_19.png" id="57_a2j2i"]
+[ext_resource type="Texture2D" uid="uid://do0qbevsvbhe4" path="res://Assets/Spaceship/sprite_raketa_20.png" id="58_6kqeh"]
+[ext_resource type="Texture2D" uid="uid://bcqvswhx4ftda" path="res://Assets/Spaceship/sprite_raketa_21.png" id="59_h2n8g"]
+[ext_resource type="Texture2D" uid="uid://u7p5vmlp7kyo" path="res://Assets/Spaceship/sprite_raketa_22.png" id="60_5byeq"]
+[ext_resource type="Texture2D" uid="uid://bjpt1bheixif2" path="res://Assets/Spaceship/sprite_raketa_23.png" id="61_4tlmq"]
+[ext_resource type="Texture2D" uid="uid://kmtqpan3n8b2" path="res://Assets/Spaceship/sprite_raketa_24.png" id="62_kt775"]
+[ext_resource type="Texture2D" uid="uid://dvuub3v6gg655" path="res://Assets/Spaceship/sprite_raketa_25.png" id="63_vl8l8"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xae5m"]
 tile_data = PackedInt32Array(131072, 327705, 4, 2, 327705, 4)
@@ -503,6 +530,100 @@ pattern_1 = SubResource("TileMapPattern_jrtdw")
 pattern_2 = SubResource("TileMapPattern_ao3r7")
 pattern_3 = SubResource("TileMapPattern_50xep")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5bky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_h5u1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_f4uap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hm708")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_yfylv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_viacw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_3p54b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_t17vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_emdrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_4vlq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_wmuma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_nkg05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_j8knb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_grnk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_nwqhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_yy64w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_xf7ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_orlyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_6f1gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_os8gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_a2j2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_6kqeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_h2n8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_5byeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_4tlmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_kt775")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_vl8l8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_163dx"]
+radius = 30.0
+height = 190.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_geyw0"]
+radius = 93.0
+height = 186.0
+
 [node name="main_3" type="Node2D"]
 process_mode = 3
 y_sort_enabled = true
@@ -526,9 +647,9 @@ layer_2/tile_data = PackedInt32Array(-720954, 28, 0, -983095, 28, 0, 1507215, 27
 
 [node name="Player" parent="TileMap" instance=ExtResource("1_54a2h")]
 process_mode = 1
-position = Vector2(-1337, 67)
+position = Vector2(-1218, -134)
 scale = Vector2(0.75, 0.75)
-collision_mask = 34
+collision_mask = 50
 speed = 10000.0
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
@@ -542,3 +663,33 @@ z_index = 1
 scale = Vector2(2.9, 2.9)
 pivot_offset = Vector2(0, 2)
 theme = ExtResource("26_o7o53")
+
+[node name="Spaceship" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("37_dvrfi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Spaceship"]
+position = Vector2(-1425, -835)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_u5bky")
+frame = 25
+frame_progress = 1.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Spaceship/AnimatedSprite2D"]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spaceship/AnimatedSprite2D/StaticBody2D"]
+position = Vector2(-40, 333)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_163dx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Spaceship/AnimatedSprite2D/StaticBody2D"]
+position = Vector2(35.5, 332.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_163dx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Spaceship/AnimatedSprite2D/StaticBody2D"]
+position = Vector2(-2, 308.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_geyw0")

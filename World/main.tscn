@@ -1016,6 +1016,8 @@ rotates = false
 [node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") instance=ExtResource("22_o6amh")]
 path_follow_node = NodePath("..")
 
+[node name="Spike" type="Node2D" parent="TileMap"]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="victory" parent="CanvasLayer" instance=ExtResource("16_nl46s")]
