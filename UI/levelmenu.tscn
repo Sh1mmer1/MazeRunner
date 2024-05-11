@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ftog6x6nse8s"]
+[gd_scene load_steps=18 format=3 uid="uid://ftog6x6nse8s"]
 
 [ext_resource type="Texture2D" uid="uid://cwa0oqcbupw7e" path="res://UI/tNfnSd.png" id="1_anrsb"]
 [ext_resource type="Script" path="res://UI/levelmenu.gd" id="1_yhrcp"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c3qk0qe3w205v" path="res://UI/Level 3/Level 30.png" id="8_qayo4"]
 [ext_resource type="Texture2D" uid="uid://d0gm1pdi6cdu1" path="res://UI/Level 3/Level 32.png" id="9_b4wo5"]
 [ext_resource type="Texture2D" uid="uid://whmxgxs8yi1t" path="res://UI/Level 3/Level 31.png" id="10_onq8d"]
+[ext_resource type="AudioStream" uid="uid://da4s37lc16eff" path="res://sounds tracks/analog-appliance-button-15-186961.mp3" id="12_lw3sk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usq6x"]
 
@@ -187,6 +188,10 @@ layout_mode = 2
 texture_normal = ExtResource("8_qayo4")
 texture_pressed = ExtResource("9_b4wo5")
 texture_hover = ExtResource("10_onq8d")
+
+[node name="ButtonAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_lw3sk")
+volume_db = -20.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]

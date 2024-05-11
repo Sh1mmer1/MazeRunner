@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://ca4jhs7rwnae1"]
+[gd_scene load_steps=50 format=3 uid="uid://ca4jhs7rwnae1"]
 
 [ext_resource type="Script" path="res://Charecters/Player/Player.gd" id="1_n0hds"]
 [ext_resource type="Texture2D" uid="uid://bnyu0163fvifg" path="res://Assets/Astronaut - player/astronaut_death/alien_death09.png" id="2_110du"]
@@ -41,6 +41,7 @@
 [ext_resource type="Script" path="res://Charecters/Player/ShootRange.gd" id="27_5dmk2"]
 [ext_resource type="AudioStream" uid="uid://t3j2q7yrnc0p" path="res://sounds tracks/pick-up.mp3" id="28_e4654"]
 [ext_resource type="AudioStream" uid="uid://xqe7pavpxw46" path="res://sounds tracks/8-bit-video-game-lose-sound-version-1-145828.mp3" id="29_rr8t1"]
+[ext_resource type="AudioStream" uid="uid://152c4siocuka" path="res://sounds tracks/8-bit-shot_F#_minor.wav" id="42_f6sd3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lh41"]
 radius = 22.0
@@ -307,6 +308,10 @@ volume_db = -20.0
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="FireTimer" type="Timer" parent="."]
+
+[node name="GunFireAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("42_f6sd3")
+volume_db = -20.0
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

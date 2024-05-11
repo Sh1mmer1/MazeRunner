@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://152c4siocuka"
+path="res://.godot/imported/8-bit-shot_F#_minor.wav-d1f366376d54a45a3cd66d8f6d6f0f1b.sample"
+
+[deps]
+
+source_file="res://sounds tracks/8-bit-shot_F#_minor.wav"
+dest_files=["res://.godot/imported/8-bit-shot_F#_minor.wav-d1f366376d54a45a3cd66d8f6d6f0f1b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

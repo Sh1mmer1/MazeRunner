@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://du1nk0o1dq6kn"]
+[gd_scene load_steps=15 format=3 uid="uid://du1nk0o1dq6kn"]
 
 [ext_resource type="Script" path="res://World/laser.gd" id="1_0gcfp"]
 [ext_resource type="Texture2D" uid="uid://c2imn6mr40ov3" path="res://Assets/Lasertrap/lasertrap_off0.png" id="1_y6610"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://copc61xrqdf07" path="res://Assets/Lasertrap/lasertrap_off2.png" id="4_u3v1w"]
 [ext_resource type="Texture2D" uid="uid://d4nwh4y3hvn3j" path="res://Assets/Lasertrap/lasertrap_off3.png" id="5_o2tly"]
 [ext_resource type="Script" path="res://World/LaserDisable.gd" id="6_h2spf"]
+[ext_resource type="AudioStream" uid="uid://cm1par26emf3v" path="res://sounds tracks/laser-beam-76426.mp3" id="6_t577t"]
 [ext_resource type="Texture2D" uid="uid://cmmr30vvritkb" path="res://Assets/Lasertrap/sprite_lever0.png" id="7_1konb"]
 [ext_resource type="Texture2D" uid="uid://dskrn1wftem5p" path="res://Assets/Lasertrap/sprite_lever1.png" id="8_j807w"]
+[ext_resource type="AudioStream" uid="uid://b20jtyv68vxq1" path="res://sounds tracks/power-down-7103.mp3" id="10_qt0jj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xn46c"]
 size = Vector2(23, 188)
@@ -51,6 +53,13 @@ shape = SubResource("RectangleShape2D_xn46c")
 libraries = {
 "": SubResource("AnimationLibrary_al51b")
 }
+
+[node name="LaserOFF" type="AudioStreamPlayer2D" parent="Laser"]
+stream = ExtResource("10_qt0jj")
+volume_db = -20.0
+
+[node name="LaserBeam" type="AudioStreamPlayer2D" parent="Laser"]
+stream = ExtResource("6_t577t")
 
 [node name="LaserDisable" type="Area2D" parent="."]
 script = ExtResource("6_h2spf")

@@ -7,11 +7,14 @@ var on: bool = true
 var animation_finished: bool = true
 @onready var offButton = $"../LaserDisable/OffButton"
 @onready var onButton = $"../LaserDisable/OnButton"
+@onready var LaserOFF = $LaserOFF
+@onready var LaserBeam = $LaserBeam
 
 func _process(delta):
 	if on == false and animation_finished == true:
 		if animation_finished:
 			animation_player.play("default")
+			LaserOFF.play()
 			animation_finished = false
 
 func _on_body_entered(body):

@@ -116,6 +116,7 @@ func _on_range_body_entered(body):
 		target_position = body.global_position
 		fire_timer.start()
 		fire_laser()
+		$GunFireAudio.play()
 
 
 

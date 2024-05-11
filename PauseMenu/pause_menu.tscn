@@ -63,5 +63,6 @@ volume_db = -20.0
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_button_down"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/QuitToMain" to="." method="_on_quit_to_main_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/QuitGame" to="." method="_on_quit_game_button_down"]

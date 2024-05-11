@@ -11,9 +11,9 @@ func _ready():
 	
 func _on_body_entered(body):
 	if body is Player:
-		$PickUp.play()
 		card_pickup.emit(self)
 		queue_free()
+		$PickUp.play()
 		var cards = get_tree().get_nodes_in_group("Cards")
 		if cards.size() == 1:
 			var parent = get_parent().get_parent()
