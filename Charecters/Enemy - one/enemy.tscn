@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw3fkahx3vh0t"]
+[gd_scene load_steps=8 format=3 uid="uid://dw3fkahx3vh0t"]
 
 [ext_resource type="Script" path="res://Charecters/Enemy - one/enemy.gd" id="1_6tntp"]
 [ext_resource type="Texture2D" uid="uid://bjbugrspck6cw" path="res://Assets/Sleepy - enemy/enemy_dos.png" id="2_nurb5"]
-[ext_resource type="AudioStream" uid="uid://b41d50ba538xn" path="res://sounds tracks/slimejump-6913.mp3" id="4_0ae40"]
 [ext_resource type="AudioStream" uid="uid://i2htpg7odryg" path="res://sounds tracks/alien-screaming-82512.mp3" id="23_sauon"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0a3ja"]
@@ -61,10 +60,7 @@ shape = SubResource("CapsuleShape2D_hapab")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_sauon")
-volume_db = -50.0
-
-[node name="AlienMovingAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_0ae40")
+volume_db = -30.0
 
 [connection signal="body_entered" from="enemy_animation/detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="enemy_animation/detection_area" to="." method="_on_detection_area_body_exited"]
