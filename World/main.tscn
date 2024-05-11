@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://b7nus3b8yr4y2"]
+[gd_scene load_steps=71 format=3 uid="uid://b7nus3b8yr4y2"]
 
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="1_5eya8"]
 [ext_resource type="Texture2D" uid="uid://bntku8k33s56k" path="res://Assets/Map - Space/SpaceWalls/atlasas.png" id="1_k12qa"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bygtfjv33rcd6" path="res://World/SpaceShipAmbience.tscn" id="20_ltsno"]
 [ext_resource type="PackedScene" uid="uid://cptp1gxwspwny" path="res://Charecters/Enemy - one/enemy_type_1.tscn" id="21_4l85l"]
 [ext_resource type="PackedScene" uid="uid://c7o7d8pp8r4vd" path="res://Charecters/Enemy - one/enemy_type_3.tscn" id="22_o6amh"]
+[ext_resource type="PackedScene" uid="uid://cxjqeoob7h1us" path="res://World/spikes.tscn" id="23_iudoc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_r3n4c"]
 vertices = PackedVector2Array(-3, 3, 0, 3, 0, 12, -12, 12, -12, 0, -3, 0)
@@ -1017,6 +1018,10 @@ rotates = false
 path_follow_node = NodePath("..")
 
 [node name="Spike" type="Node2D" parent="TileMap"]
+
+[node name="Spikes" parent="TileMap/Spike" instance=ExtResource("23_iudoc")]
+position = Vector2(189, 129)
+scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
