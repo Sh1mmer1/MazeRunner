@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://b7nus3b8yr4y2"]
+[gd_scene load_steps=72 format=3 uid="uid://b7nus3b8yr4y2"]
 
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="1_5eya8"]
 [ext_resource type="Texture2D" uid="uid://bntku8k33s56k" path="res://Assets/Map - Space/SpaceWalls/atlasas.png" id="1_k12qa"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://gp8wwkur8o0t" path="res://Assets/Map - Space/SpaceWalls/fixedsiena4.png" id="5_ufi42"]
 [ext_resource type="PackedScene" uid="uid://bjsdsfgryu31g" path="res://World/speed.tscn" id="6_4cdrg"]
 [ext_resource type="Texture2D" uid="uid://bajkrnt243lbt" path="res://Assets/Map - Space/SpaceWalls/fixedsiena6.png" id="8_ly2m7"]
+[ext_resource type="PackedScene" uid="uid://bkyr1jcp2uxj3" path="res://World/laser_disabler.tscn" id="12_lggft"]
 [ext_resource type="PackedScene" uid="uid://dmo3a10xt0rid" path="res://World/gun.tscn" id="14_acdem"]
 [ext_resource type="PackedScene" uid="uid://crgynbxlgkicu" path="res://pause_menu.tscn" id="15_ad7i3"]
 [ext_resource type="Script" path="res://World/gun.gd" id="15_g1gkp"]
@@ -946,6 +947,10 @@ visibility_layer = 2
 position = Vector2(-137, -59)
 scale = Vector2(0.25, 0.25)
 
+[node name="LaserDisable" parent="TileMap/LaserTrap" instance=ExtResource("12_lggft")]
+position = Vector2(276, -8)
+scale = Vector2(0.3, 0.3)
+
 [node name="Speed" type="Node2D" parent="TileMap"]
 process_mode = 1
 
@@ -1023,6 +1028,18 @@ path_follow_node = NodePath("..")
 position = Vector2(189, 129)
 scale = Vector2(0.5, 0.5)
 
+[node name="LaserTrap2" type="Node2D" parent="TileMap"]
+process_mode = 1
+visibility_layer = 2
+
+[node name="Laser" parent="TileMap/LaserTrap2" instance=ExtResource("5_n0ior")]
+position = Vector2(-157, 132)
+scale = Vector2(0.25, 0.25)
+
+[node name="LaserDisable" parent="TileMap/LaserTrap2" instance=ExtResource("12_lggft")]
+position = Vector2(-110, 130)
+scale = Vector2(0.3, 0.3)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="victory" parent="CanvasLayer" instance=ExtResource("16_nl46s")]
@@ -1031,5 +1048,7 @@ visible = false
 [node name="gameOver" parent="CanvasLayer" instance=ExtResource("18_jgagm")]
 visible = false
 
+[connection signal="laser_disable" from="TileMap/LaserTrap/LaserDisable" to="TileMap/LaserTrap/Laser" method="_on_laser_disable_laser_disable"]
 [connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]
 [connection signal="gun_pickup" from="TileMap/Gun/Gun" to="TileMap/Player" method="_on_gun_gun_pickup"]
+[connection signal="laser_disable" from="TileMap/LaserTrap2/LaserDisable" to="TileMap/LaserTrap2/Laser" method="_on_laser_disable_laser_disable"]

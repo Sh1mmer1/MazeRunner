@@ -1,13 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://du1nk0o1dq6kn"]
+[gd_scene load_steps=9 format=3 uid="uid://du1nk0o1dq6kn"]
 
 [ext_resource type="Script" path="res://World/laser.gd" id="1_0gcfp"]
 [ext_resource type="Texture2D" uid="uid://c2imn6mr40ov3" path="res://Assets/Lasertrap/lasertrap_off0.png" id="1_y6610"]
 [ext_resource type="Texture2D" uid="uid://drxp6rnk71b0b" path="res://Assets/Lasertrap/lasertrap_off1.png" id="3_4snr6"]
 [ext_resource type="Texture2D" uid="uid://copc61xrqdf07" path="res://Assets/Lasertrap/lasertrap_off2.png" id="4_u3v1w"]
 [ext_resource type="Texture2D" uid="uid://d4nwh4y3hvn3j" path="res://Assets/Lasertrap/lasertrap_off3.png" id="5_o2tly"]
-[ext_resource type="Script" path="res://World/LaserDisable.gd" id="6_h2spf"]
-[ext_resource type="Texture2D" uid="uid://cmmr30vvritkb" path="res://Assets/Lasertrap/sprite_lever0.png" id="7_1konb"]
-[ext_resource type="Texture2D" uid="uid://dskrn1wftem5p" path="res://Assets/Lasertrap/sprite_lever1.png" id="8_j807w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xn46c"]
 size = Vector2(23, 188)
@@ -32,44 +29,21 @@ _data = {
 "default": SubResource("Animation_jupu5")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ly2u"]
-size = Vector2(94, 67)
-
-[node name="GlobalSignal" type="Node2D"]
-
-[node name="Laser" type="Area2D" parent="." groups=["Lasers"]]
+[node name="Laser" type="Area2D" groups=["Lasers"]]
 script = ExtResource("1_0gcfp")
 
-[node name="laser" type="Sprite2D" parent="Laser"]
+[node name="laser" type="Sprite2D" parent="."]
 texture = ExtResource("1_y6610")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_xn46c")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Laser"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_al51b")
 }
 
-[node name="LaserDisable" type="Area2D" parent="."]
-script = ExtResource("6_h2spf")
+[node name="GlobalSignal" type="Node2D" parent="."]
 
-[node name="OffButton" type="Sprite2D" parent="LaserDisable"]
-visible = false
-light_mask = 2
-visibility_layer = 2
-position = Vector2(162, 215)
-texture = ExtResource("7_1konb")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="LaserDisable"]
-position = Vector2(164, 220.5)
-shape = SubResource("RectangleShape2D_6ly2u")
-
-[node name="OnButton" type="Sprite2D" parent="LaserDisable"]
-position = Vector2(162, 215)
-texture = ExtResource("8_j807w")
-
-[connection signal="body_entered" from="Laser" to="Laser" method="_on_body_entered"]
-[connection signal="body_entered" from="LaserDisable" to="Laser" method="_on_laser_disable_body_entered"]
-[connection signal="body_entered" from="LaserDisable" to="LaserDisable" method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -24,8 +24,7 @@ func _on_laser_animation_finished():
 	animation_player.stop()
 
 
-
-func _on_laser_disable_body_entered(body):
+func _on_laser_disable_laser_disable():
 	on = false
 	onButton.visible = false
 	offButton.visible = true
