@@ -963,14 +963,15 @@ process_mode = 1
 light_mask = 2
 visibility_layer = 4
 z_index = 1
-position = Vector2(11, -2)
+position = Vector2(13.0001, 50)
 scale = Vector2(0.4, 0.4)
-collision_mask = 6
+collision_mask = 14
 
 [node name="Camera2D2" type="Camera2D" parent="TileMap/Player"]
 
 [node name="PauseMenu" parent="TileMap/Player/Camera2D2" instance=ExtResource("15_ad7i3")]
 visible = false
+z_index = 1
 scale = Vector2(2.9, 2.9)
 pivot_offset = Vector2(0, 2)
 theme = ExtResource("16_wfti7")
@@ -979,7 +980,7 @@ theme = ExtResource("16_wfti7")
 process_mode = 1
 
 [node name="Gun" parent="TileMap/Gun" instance=ExtResource("14_acdem")]
-position = Vector2(174, -42)
+position = Vector2(134, -42)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("15_g1gkp")
 
@@ -994,20 +995,26 @@ collision_layer = 2
 
 [node name="EnemyType2" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
-position = Vector2(-664, -587)
+z_index = 1
+position = Vector2(-8, -150)
 scale = Vector2(0.5, 0.5)
+collision_mask = 22
 
 [node name="EnemyType3" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
-position = Vector2(-720, -539)
+z_index = 1
+position = Vector2(710, 573)
 scale = Vector2(0.5, 0.5)
+collision_mask = 22
 
 [node name="AmbienceAudio" parent="TileMap" instance=ExtResource("20_ltsno")]
 volume_db = -25.0
 
 [node name="EnemyType1" parent="TileMap" instance=ExtResource("21_4l85l")]
+z_index = 1
 position = Vector2(88, 334)
 scale = Vector2(0.1, 0.1)
+collision_mask = 22
 
 [node name="Sleepy" type="Node2D" parent="TileMap"]
 
@@ -1019,7 +1026,7 @@ position = Vector2(-757, 606)
 scale = Vector2(0.1, 0.1)
 rotates = false
 
-[node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") instance=ExtResource("22_o6amh")]
+[node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") groups=["Enemies"] instance=ExtResource("22_o6amh")]
 path_follow_node = NodePath("..")
 
 [node name="Spike" type="Node2D" parent="TileMap"]

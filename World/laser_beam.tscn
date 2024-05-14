@@ -8,8 +8,8 @@ radius = 4.0
 height = 34.0
 
 [node name="laserBeam" type="Area2D"]
-collision_layer = 17
-collision_mask = 9
+collision_layer = 64
+collision_mask = 11
 script = ExtResource("1_dhrs5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

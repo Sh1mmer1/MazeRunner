@@ -133,16 +133,16 @@ animations = [{
 radius = 82.5545
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o4amq"]
-radius = 26.0
+radius = 38.0
 height = 86.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6e1aa"]
 radius = 35.0
 height = 70.0
 
-[node name="EnemyType2" type="CharacterBody2D"]
+[node name="EnemyType2" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 8
-collision_mask = 22
+collision_mask = 23
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_v38w1")
@@ -166,12 +166,11 @@ shape = SubResource("CircleShape2D_g5320")
 collision_layer = 8
 
 [node name="Interaction" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 17)
 shape = SubResource("CapsuleShape2D_o4amq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 17)
+position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_6e1aa")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]

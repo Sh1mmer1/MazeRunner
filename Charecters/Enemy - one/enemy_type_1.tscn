@@ -21,15 +21,16 @@ radius = 349.036
 [sub_resource type="CircleShape2D" id="CircleShape2D_onsjp"]
 radius = 124.036
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8idmn"]
-radius = 102.044
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rh11"]
+radius = 202.0
+height = 548.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nseb2"]
-radius = 224.056
+radius = 185.024
 
-[node name="EnemyType1" type="CharacterBody2D"]
+[node name="EnemyType1" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 8
-collision_mask = 22
+collision_mask = 23
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_uwats")
@@ -43,19 +44,21 @@ animation = &"idle"
 collision_layer = 8
 
 [node name="NotDetection" type="CollisionShape2D" parent="enemy_animation/not_detection_area"]
+visible = false
 shape = SubResource("CircleShape2D_1nou3")
 
 [node name="detection_area" type="Area2D" parent="enemy_animation"]
 collision_layer = 8
 
 [node name="Detection" type="CollisionShape2D" parent="enemy_animation/detection_area"]
+visible = false
 shape = SubResource("CircleShape2D_onsjp")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 
 [node name="Interaction" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_8idmn")
+shape = SubResource("CapsuleShape2D_4rh11")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)

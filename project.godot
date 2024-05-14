@@ -58,6 +58,7 @@ pause={
 2d_physics/layer_3="Keycard"
 2d_physics/layer_4="Enemy"
 2d_physics/layer_6="Door"
+2d_physics/layer_7="Bullet"
 
 [rendering]
 

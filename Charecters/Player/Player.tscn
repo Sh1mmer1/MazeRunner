@@ -247,18 +247,19 @@ _data = {
 "idle_main_gun": SubResource("Animation_5ntim")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4pp5y"]
-radius = 319.025
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2tru6"]
+radius = 217.0
+height = 434.0
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 32
+collision_mask = 42
 motion_mode = 1
 script = ExtResource("1_n0hds")
 speed = 5000.0
 
 [node name="Body" type="Sprite2D" parent="."]
 position = Vector2(-1, -23)
-texture = ExtResource("13_65aaw")
+texture = ExtResource("14_0htrs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -10)
@@ -267,8 +268,7 @@ shape = SubResource("CapsuleShape2D_5lh41")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -22)
 sprite_frames = SubResource("SpriteFrames_hh3h1")
-animation = &"idle_main"
-frame_progress = 0.379705
+animation = &"front_walk"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Body")
@@ -289,12 +289,17 @@ volume_db = -20.0
 
 [node name="Range" type="Area2D" parent="."]
 collision_layer = 17
-collision_mask = 9
+collision_mask = 8
 
 [node name="ShootRange" type="CollisionShape2D" parent="Range"]
-visible = false
-shape = SubResource("CircleShape2D_4pp5y")
+position = Vector2(1, -23)
+shape = SubResource("CapsuleShape2D_2tru6")
 script = ExtResource("27_5dmk2")
+
+[node name="RayCast2D" type="RayCast2D" parent="Range"]
+target_position = Vector2(0, 115)
+collision_mask = 10
+collide_with_areas = true
 
 [node name="PickUpItem" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_e4654")
@@ -310,4 +315,4 @@ volume_db = -20.0
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
-[connection signal="timeout" from="FireTimer" to="." method="fire_laser"]
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

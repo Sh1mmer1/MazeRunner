@@ -12,14 +12,18 @@ var body_sprite: Sprite2D
 var is_animating: bool = false
 var enemy: Enemy = null
 var is_gun_picked_up:bool = false
-var gun_cooldown = false
+var gun_cooldown = true
 var laser_beam = preload("res://World/laser_beam.tscn")
 var target_position: Vector2 = Vector2.ZERO
+var ray_cast_direction: Vector2 = Vector2.ZERO
+var target
+var hit_pos
 @onready var animation_player = $AnimationPlayer
 @onready var collision_shape = $CollisionShape2D
 @onready var fire_timer = $FireTimer
 @onready var spaceship = $"../../Spaceship/AnimatedSprite2D"
-
+@onready var detection = $Range/ShootRange
+@onready var ray_cast = $Range/RayCast2D
 
 func _ready():
 	animated_sprite = $AnimatedSprite2D
@@ -51,7 +55,10 @@ func _physics_process(delta):
 	if not is_dead:
 		var direction = Input.get_vector("left", "right", "up", "down").normalized()
 		$Marker2D.look_at(direction)
-		
+		if Input.is_action_pressed("down") or Input.is_action_pressed("up"):
+			detection.rotation = 0
+		elif Input.is_action_pressed("right") or Input.is_action_pressed("left"):
+			detection.rotation = 90
 		if direction != Vector2.ZERO:
 			velocity = direction * speed * delta * 3
 			update_sprite_direction(direction)
@@ -68,21 +75,41 @@ func _physics_process(delta):
 					animation_player.play("idle_main")
 			
 		move_and_slide()
+		
+	queue_redraw()
+	if target:
+		aim()
+
+func aim():
+	var space_state = get_world_2d().get_direct_space_state()
+	var params = PhysicsRayQueryParameters2D.new()
+	params.from = position
+	params.to = target.position
+	params.exclude = [self]
+	params.collision_mask = collision_mask
+	var result = space_state.intersect_ray(params)
+	if result:
+		hit_pos = result.position
+		var collider = result.collider 
+		if collider and collider.is_in_group("Enemies"):
+			if gun_cooldown:
+				fire_laser(target.position)
 
 func update_sprite_direction(direction):
 	var animation_name = "" 
-	
-	if direction == Vector2(0, 1):
+
+	if velocity.y > 0:
 		animation_name = "front_walk"
-	elif direction == Vector2(0, -1):
+	elif velocity.y < 0:
 		animation_name = "back_walk"
-	elif direction == Vector2(1, 0):
+	elif velocity.x > 0:
 		animation_name = "right_walk"
-	elif direction == Vector2(-1, 0):
+	elif velocity.x < 0:
 		animation_name = "left_walk"
-	
+		
 	if is_gun_picked_up:
 		animation_name += "_gun"
+	
 	
 	if not is_animating:
 		animated_sprite.play(animation_name)
@@ -112,10 +139,11 @@ func set_speed(new_speed: float):
 
 
 func _on_range_body_entered(body):
-	if is_gun_picked_up and not gun_cooldown:
-		target_position = body.global_position
-		fire_timer.start()
-		fire_laser()
+	if is_gun_picked_up:
+		if target:
+			("Target found")
+			return
+		target = body
 
 
 
@@ -128,17 +156,19 @@ func stop_player_movement():
 	animated_sprite.visible = false
 	body_sprite.visible = true
 
-func fire_laser():
-	if is_gun_picked_up:
-		var gun_instance = laser_beam.instantiate()
-		
-		var direction = (target_position - $Marker2D.global_position).normalized()
-		gun_instance.rotation = direction.angle()
-		gun_instance.global_position = $Marker2D.global_position
+func fire_laser(pos):
 
-		add_child(gun_instance)
-		
+	if is_gun_picked_up:
+		var b = laser_beam.instantiate()
+		var a = (pos - global_position).angle()
+		b.start(global_position, a + randf_range(-0.5, 0.5))
+		get_parent().add_child(b)
+		gun_cooldown = false
+		fire_timer.start()
 
 func _on_range_body_exited(body):
-	fire_timer.stop()
+	if body == target:
+		target = null
 
+func _on_fire_timer_timeout():
+	gun_cooldown = true
