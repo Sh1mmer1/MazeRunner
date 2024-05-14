@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://b7nus3b8yr4y2"]
+[gd_scene load_steps=75 format=3 uid="uid://b7nus3b8yr4y2"]
 
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="1_5eya8"]
 [ext_resource type="Texture2D" uid="uid://bntku8k33s56k" path="res://Assets/Map - Space/SpaceWalls/atlasas.png" id="1_k12qa"]
@@ -13,7 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://gp8wwkur8o0t" path="res://Assets/Map - Space/SpaceWalls/fixedsiena4.png" id="5_ufi42"]
 [ext_resource type="PackedScene" uid="uid://bjsdsfgryu31g" path="res://World/speed.tscn" id="6_4cdrg"]
 [ext_resource type="Texture2D" uid="uid://bajkrnt243lbt" path="res://Assets/Map - Space/SpaceWalls/fixedsiena6.png" id="8_ly2m7"]
+[ext_resource type="PackedScene" uid="uid://dqbrmyn4aod5b" path="res://World/card_green.tscn" id="11_rrkob"]
 [ext_resource type="PackedScene" uid="uid://bkyr1jcp2uxj3" path="res://World/laser_disabler.tscn" id="12_lggft"]
+[ext_resource type="PackedScene" uid="uid://bbnf7l38fuiop" path="res://World/purple_card.tscn" id="12_un5fk"]
+[ext_resource type="PackedScene" uid="uid://b1minvi4p3p4v" path="res://World/red_card.tscn" id="13_g7men"]
 [ext_resource type="PackedScene" uid="uid://dmo3a10xt0rid" path="res://World/gun.tscn" id="14_acdem"]
 [ext_resource type="PackedScene" uid="uid://crgynbxlgkicu" path="res://pause_menu.tscn" id="15_ad7i3"]
 [ext_resource type="Script" path="res://World/gun.gd" id="15_g1gkp"]
@@ -932,11 +935,23 @@ layer_0/tile_data = PackedInt32Array(1703941, 65536, 3, 1703942, 65536, 3, 17039
 process_mode = 1
 
 [node name="Card2" parent="TileMap/KeyCard" instance=ExtResource("4_v5wkg")]
-position = Vector2(-213, 5)
+position = Vector2(-84, 3)
 scale = Vector2(0.5, 0.5)
 
 [node name="Card" parent="TileMap/KeyCard" instance=ExtResource("4_v5wkg")]
 position = Vector2(-33, -61)
+scale = Vector2(0.5, 0.5)
+
+[node name="Card_Green" parent="TileMap/KeyCard" groups=["Cards"] instance=ExtResource("11_rrkob")]
+position = Vector2(227, -48)
+scale = Vector2(0.5, 0.5)
+
+[node name="Card3" parent="TileMap/KeyCard" instance=ExtResource("12_un5fk")]
+position = Vector2(50, -63)
+scale = Vector2(0.5, 0.5)
+
+[node name="Card4" parent="TileMap/KeyCard" instance=ExtResource("13_g7men")]
+position = Vector2(-54, 140)
 scale = Vector2(0.5, 0.5)
 
 [node name="LaserTrap" type="Node2D" parent="TileMap"]
@@ -963,7 +978,7 @@ process_mode = 1
 light_mask = 2
 visibility_layer = 4
 z_index = 1
-position = Vector2(13.0001, 50)
+position = Vector2(8.00001, 37)
 scale = Vector2(0.4, 0.4)
 collision_mask = 14
 

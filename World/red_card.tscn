@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1minvi4p3p4v"]
+
+[ext_resource type="Script" path="res://World/card.gd" id="1_y6xox"]
+[ext_resource type="Texture2D" uid="uid://cbiesaji0dg1i" path="res://Assets/Key cards/keycard_red0.png" id="2_r8ekr"]
+[ext_resource type="Texture2D" uid="uid://bfcujhfyubv2g" path="res://Assets/Key cards/keycard_red1.png" id="3_roxk7"]
+[ext_resource type="Texture2D" uid="uid://da2xx57clcxjj" path="res://Assets/Key cards/keycard_red2.png" id="4_n7gjr"]
+[ext_resource type="Texture2D" uid="uid://b0uwt658as3kk" path="res://Assets/Key cards/keycard_red3.png" id="5_7jnl1"]
+[ext_resource type="Texture2D" uid="uid://cgtgmfam4c2aj" path="res://Assets/Key cards/keycard_red4.png" id="6_yywk8"]
+[ext_resource type="AudioStream" uid="uid://t3j2q7yrnc0p" path="res://sounds tracks/pick-up.mp3" id="7_vqgnr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hm1oe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r8ekr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_roxk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n7gjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7jnl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yywk8")
+}],
+"loop": true,
+"name": &"card",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5iei"]
+size = Vector2(104, 97)
+
+[node name="Card" type="Area2D" groups=["Cards"]]
+script = ExtResource("1_y6xox")
+
+[node name="card" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hm1oe")
+animation = &"card"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2, 5.5)
+shape = SubResource("RectangleShape2D_v5iei")
+
+[node name="PickUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vqgnr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
