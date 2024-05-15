@@ -1,32 +1,146 @@
-[gd_scene load_steps=9 format=3 uid="uid://cptp1gxwspwny"]
+[gd_scene load_steps=35 format=3 uid="uid://cptp1gxwspwny"]
 
 [ext_resource type="Script" path="res://Charecters/Enemy - one/enemy_type_1.gd" id="1_uwats"]
-[ext_resource type="Texture2D" uid="uid://bjbugrspck6cw" path="res://Assets/Sleepy - enemy/enemy_dos.png" id="2_0wwbe"]
+[ext_resource type="Texture2D" uid="uid://xgh70twdulsy" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep0.png" id="2_w6ywt"]
+[ext_resource type="Texture2D" uid="uid://cc4uc2y7durey" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_01.png" id="3_f17m1"]
+[ext_resource type="Texture2D" uid="uid://bdr2c8sjnkvau" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep1.png" id="3_wfisp"]
+[ext_resource type="Texture2D" uid="uid://dehbo37u4d0i0" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_02.png" id="4_4qgiv"]
+[ext_resource type="Texture2D" uid="uid://b2qyjyyndi5c7" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep2.png" id="4_fja8y"]
+[ext_resource type="Texture2D" uid="uid://biptb7iyb1l43" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep3.png" id="5_l1otd"]
+[ext_resource type="Texture2D" uid="uid://ddsva7xfclxs5" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_03.png" id="5_rvaj4"]
+[ext_resource type="Texture2D" uid="uid://b3t6h0rxwdisw" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_04.png" id="6_8jpci"]
+[ext_resource type="Texture2D" uid="uid://j1vkbimu5bfc" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep4.png" id="6_pg1hh"]
+[ext_resource type="Texture2D" uid="uid://c3ebglvck8sat" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep5.png" id="7_ud84t"]
+[ext_resource type="Texture2D" uid="uid://di6yrw7ttxuop" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_05.png" id="7_uxivm"]
+[ext_resource type="Texture2D" uid="uid://dwnkuerqferef" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep6.png" id="8_1r3wy"]
+[ext_resource type="Texture2D" uid="uid://kwk3bba3yp4q" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_06.png" id="8_5qj0w"]
+[ext_resource type="Texture2D" uid="uid://801pwyp8c8sc" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_07.png" id="9_2r84s"]
+[ext_resource type="Texture2D" uid="uid://u4y78v5lbhvd" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep7.png" id="9_cv53u"]
+[ext_resource type="Texture2D" uid="uid://dlnewgbr7beil" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_08.png" id="10_34llh"]
+[ext_resource type="Texture2D" uid="uid://cytnma44mrxmk" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep8.png" id="10_wyukb"]
+[ext_resource type="Texture2D" uid="uid://bqabnjkpg0oe7" path="res://Assets/Sleepy - enemy/purple alien/alien death/alien_purple_death_09.png" id="11_ji38c"]
 [ext_resource type="AudioStream" uid="uid://i2htpg7odryg" path="res://sounds tracks/alien-screaming-82512.mp3" id="20_0bp3u"]
+[ext_resource type="Texture2D" uid="uid://pvyldglluems" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_0.png" id="21_rqouh"]
+[ext_resource type="Texture2D" uid="uid://clsxoppwj6j7m" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_1.png" id="22_g2elg"]
+[ext_resource type="Texture2D" uid="uid://c5pjnnfc6x3v" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_2.png" id="23_dgrto"]
+[ext_resource type="Texture2D" uid="uid://dsb70lrswmvxv" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_3.png" id="24_6t28i"]
+[ext_resource type="Texture2D" uid="uid://2bpg6hj38e57" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_4.png" id="25_s40ec"]
+[ext_resource type="Texture2D" uid="uid://d1ygb7r2n20f8" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_5.png" id="26_awh21"]
+[ext_resource type="Texture2D" uid="uid://1j8utgfdlp8" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_6.png" id="27_yvdl7"]
+[ext_resource type="Texture2D" uid="uid://bs8nynusy8n2a" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_7.png" id="28_3befx"]
+[ext_resource type="Texture2D" uid="uid://cmwqpxmpir23h" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_8.png" id="29_hh4gh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0a3ja"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0wwbe")
+"texture": ExtResource("3_f17m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4qgiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rvaj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8jpci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uxivm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5qj0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2r84s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_34llh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ji38c")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w6ywt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wfisp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fja8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l1otd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pg1hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ud84t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1r3wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cv53u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wyukb")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_rqouh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_g2elg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dgrto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6t28i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_s40ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_awh21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_yvdl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3befx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hh4gh")
+}],
+"loop": true,
+"name": &"walk_front",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1nou3"]
-radius = 349.036
+[sub_resource type="CircleShape2D" id="CircleShape2D_ea8he"]
+radius = 257.28
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onsjp"]
-radius = 124.036
+[sub_resource type="CircleShape2D" id="CircleShape2D_6kmfg"]
+radius = 124.84
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rh11"]
-radius = 202.0
-height = 548.0
+radius = 36.0
+height = 88.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nseb2"]
-radius = 185.024
+radius = 31.257
 
 [node name="EnemyType1" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 8
@@ -38,30 +152,31 @@ script = ExtResource("1_uwats")
 [node name="enemy_animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 3)
 sprite_frames = SubResource("SpriteFrames_0a3ja")
-animation = &"idle"
+animation = &"death"
 
 [node name="not_detection_area" type="Area2D" parent="enemy_animation"]
 collision_layer = 8
 
 [node name="NotDetection" type="CollisionShape2D" parent="enemy_animation/not_detection_area"]
-visible = false
-shape = SubResource("CircleShape2D_1nou3")
+shape = SubResource("CircleShape2D_ea8he")
 
 [node name="detection_area" type="Area2D" parent="enemy_animation"]
 collision_layer = 8
 
 [node name="Detection" type="CollisionShape2D" parent="enemy_animation/detection_area"]
-visible = false
-shape = SubResource("CircleShape2D_onsjp")
+shape = SubResource("CircleShape2D_6kmfg")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 
 [node name="Interaction" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(2, 13)
 shape = SubResource("CapsuleShape2D_4rh11")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+visible = false
+position = Vector2(3, 18)
 shape = SubResource("CircleShape2D_nseb2")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]

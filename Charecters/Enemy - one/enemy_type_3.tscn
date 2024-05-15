@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7o7d8pp8r4vd"]
 
 [ext_resource type="Script" path="res://Charecters/Enemy - one/enemy_type_3.gd" id="1_q3lt2"]
-[ext_resource type="Texture2D" uid="uid://bjbugrspck6cw" path="res://Assets/Sleepy - enemy/enemy_dos.png" id="1_tj6fi"]
+[ext_resource type="Texture2D" uid="uid://bjbugrspck6cw" path="res://Assets/Line - enemy/enemy_dos.png" id="1_tj6fi"]
 [ext_resource type="AudioStream" uid="uid://i2htpg7odryg" path="res://sounds tracks/alien-screaming-82512.mp3" id="2_lspc3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0a3ja"]
@@ -16,7 +16,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_36p1a"]
-radius = 171.0
+radius = 156.0
 height = 582.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_udox3"]
@@ -29,12 +29,7 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_q3lt2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.905882, 0, 0.403922, 1)
-texture = ExtResource("1_tj6fi")
-
 [node name="enemy_animation" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(1, 3)
 sprite_frames = SubResource("SpriteFrames_0a3ja")
 animation = &"idle"

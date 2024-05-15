@@ -1011,14 +1011,14 @@ collision_layer = 2
 [node name="EnemyType2" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
 z_index = 1
-position = Vector2(-8, -150)
+position = Vector2(-662, -590)
 scale = Vector2(0.5, 0.5)
 collision_mask = 22
 
 [node name="EnemyType3" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
 z_index = 1
-position = Vector2(710, 573)
+position = Vector2(-722, -563)
 scale = Vector2(0.5, 0.5)
 collision_mask = 22
 
@@ -1028,7 +1028,7 @@ volume_db = -25.0
 [node name="EnemyType1" parent="TileMap" instance=ExtResource("21_4l85l")]
 z_index = 1
 position = Vector2(88, 334)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.5, 0.5)
 collision_mask = 22
 
 [node name="Sleepy" type="Node2D" parent="TileMap"]

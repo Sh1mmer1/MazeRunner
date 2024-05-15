@@ -24,8 +24,9 @@ func _physics_process(_delta):
 			
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction*speed
-
+		
 		move_and_slide()
+		
 
 
 func recalc_path():
@@ -33,6 +34,7 @@ func recalc_path():
 		nav_agent.target_position = target_node.global_position
 	else:
 		nav_agent.target_position = home_pos
+		
 		
 
 func _on_area_2d_body_entered(body):
@@ -48,9 +50,8 @@ func dieAlien():
 		$enemy_animation.play("death")
 		velocity = Vector2.ZERO
 		player.is_gun_picked_up = false
-		queue_free()
 		await $enemy_animation.animation_finished
-		#queue_free() <- pakeist poto
+		queue_free()
 
 
 func _on_gun_gun_pickup(is_picked_up):
@@ -64,11 +65,12 @@ func _on_recalculate_timer_timeout():
 
 func _on_detection_area_area_entered(area):
 	target_node = area.owner
-	print("Entr")
+	$enemy_animation.play("walk_front")
+
 
 func _on_not_detection_area_area_exited(area):
-	print("Leav")
 	if area.owner == target_node:
 		target_node = null
+		$enemy_animation.play("idle")
 
 
