@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bajkrnt243lbt" path="res://Assets/Map - Space/SpaceWalls/fixedsiena6.png" id="8_ly2m7"]
 [ext_resource type="PackedScene" uid="uid://dqbrmyn4aod5b" path="res://World/card_green.tscn" id="11_rrkob"]
 [ext_resource type="PackedScene" uid="uid://bkyr1jcp2uxj3" path="res://World/laser_disabler.tscn" id="12_lggft"]
-[ext_resource type="PackedScene" uid="uid://bbnf7l38fuiop" path="res://World/purple_card.tscn" id="12_un5fk"]
+[ext_resource type="PackedScene" uid="uid://bbnf7l38fuiop" path="res://purple_card.tscn" id="12_un5fk"]
 [ext_resource type="PackedScene" uid="uid://b1minvi4p3p4v" path="res://World/red_card.tscn" id="13_g7men"]
 [ext_resource type="PackedScene" uid="uid://dmo3a10xt0rid" path="res://World/gun.tscn" id="14_acdem"]
 [ext_resource type="PackedScene" uid="uid://crgynbxlgkicu" path="res://pause_menu.tscn" id="15_ad7i3"]

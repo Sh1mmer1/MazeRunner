@@ -18,6 +18,7 @@ var target_position: Vector2 = Vector2.ZERO
 var ray_cast_direction: Vector2 = Vector2.ZERO
 var target
 var hit_pos
+@onready var animation_tree = $AnimationTree
 @onready var animation_player = $AnimationPlayer
 @onready var collision_shape = $CollisionShape2D
 @onready var fire_timer = $FireTimer
@@ -31,12 +32,13 @@ func _ready():
 
 	animated_sprite.visible = false	
 	body_sprite.visible = false
+	animation_tree.set("parameters/Walk/blend_position", 0.0)
 	if spaceship == null:
 		body_sprite.visible = true
-		animation_player.play("idle_main")
+		animation_tree.get("parameters/playback").travel("Idle")
 		animated_sprite.visible = false
 	if is_gun_picked_up:
-		animation_player.play("idle_main_gun")
+		animation_tree.get("parameters/playback").travel("Idle_Gun")
 	fire_timer.wait_time = 0.2
 	fire_timer.one_shot = false
 	fire_timer.paused = false
@@ -49,33 +51,37 @@ func _physics_process(delta):
 			is_dead = false
 		if spaceship.frame >= 20 and spaceship.frame != 25:
 			body_sprite.visible = true
-			animation_player.play("idle_main")
+			animation_tree.get("parameters/playback").travel("Idle")
 			animated_sprite.visible = false
 
 	if not is_dead:
 		var direction = Input.get_vector("left", "right", "up", "down").normalized()
 		$Marker2D.look_at(direction)
-		if Input.is_action_pressed("down") or Input.is_action_pressed("up"):
-			detection.rotation = 0
-		elif Input.is_action_pressed("right") or Input.is_action_pressed("left"):
-			detection.rotation = 90
+
 		if direction != Vector2.ZERO:
 			velocity = direction * speed * delta * 3
-			update_sprite_direction(direction)
+			animation_tree.set("parameters/Walk/blend_position", direction)
+			animation_tree.get("parameters/playback").travel("Walk")
+			if is_gun_picked_up:
+				animation_tree.get("parameters/playback").travel("Walk_Gun")
+			#$AnimationTree.set("parameters/Walk/blend_position", velocity)
+			#update_sprite_direction(direction)
 		else:
 			velocity = Vector2.ZERO
+			animation_tree.get("parameters/playback").travel("Idle")
 			if is_animating:
 				animated_sprite.stop()
 				is_animating = false
 				body_sprite.visible = true
 				animated_sprite.visible = false
 				if is_gun_picked_up:
-					animation_player.play("idle_main_gun")
+					animation_tree.get("parameters/playback").travel("Idle_Gun")
 				else:
-					animation_player.play("idle_main")
+					animation_tree.get("parameters/playback").travel("Idle")
 			
 		move_and_slide()
 		
+
 	queue_redraw()
 	if target:
 		aim()
@@ -112,10 +118,11 @@ func update_sprite_direction(direction):
 	
 	
 	if not is_animating:
-		animated_sprite.play(animation_name)
+		#animated_sprite.play(animation_name)
 		is_animating = true
-		body_sprite.visible = false
-		animated_sprite.visible = true
+		body_sprite.visible = true
+		animation_player.play(animation_name)
+		animated_sprite.visible = false
 	else:
 		if $Timer.time_left <= 0:
 			$footstep.pitch_scale = randf_range(0.8, 1.2)
@@ -128,7 +135,7 @@ func die():
 		$DeathSound.play()
 		animated_sprite.visible = false
 		body_sprite.visible = true
-		animation_player.play("death")
+		animation_tree.get("parameters/playback").travel("Death")
 		$LoserAudio.play()
 		await animation_player.animation_finished
 		Events.gameOver.emit()
