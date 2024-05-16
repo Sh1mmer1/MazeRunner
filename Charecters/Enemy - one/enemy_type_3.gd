@@ -21,7 +21,7 @@ func _ready():
 func _physics_process(delta):
 	if not alien_is_dead and player != null and not player.is_dead:
 		progress_ratio += delta*speed
-		path_follow_node.progress_ratio = progress_ratio
+d		path_follow_node.progress_ratio = progress_ratio
 		global_position = path_follow_node.global_position
 		
 		move_and_slide()

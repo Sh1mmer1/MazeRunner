@@ -935,23 +935,23 @@ layer_0/tile_data = PackedInt32Array(1703941, 65536, 3, 1703942, 65536, 3, 17039
 process_mode = 1
 
 [node name="Card2" parent="TileMap/KeyCard" instance=ExtResource("4_v5wkg")]
-position = Vector2(-84, 3)
+position = Vector2(735, 566)
 scale = Vector2(0.5, 0.5)
 
 [node name="Card" parent="TileMap/KeyCard" instance=ExtResource("4_v5wkg")]
-position = Vector2(-33, -61)
+position = Vector2(-698, -546)
 scale = Vector2(0.5, 0.5)
 
 [node name="Card_Green" parent="TileMap/KeyCard" groups=["Cards"] instance=ExtResource("11_rrkob")]
-position = Vector2(227, -48)
+position = Vector2(17, -514)
 scale = Vector2(0.5, 0.5)
 
 [node name="Card3" parent="TileMap/KeyCard" instance=ExtResource("12_un5fk")]
-position = Vector2(50, -63)
+position = Vector2(743, -612)
 scale = Vector2(0.5, 0.5)
 
 [node name="Card4" parent="TileMap/KeyCard" instance=ExtResource("13_g7men")]
-position = Vector2(-54, 140)
+position = Vector2(-866, 201)
 scale = Vector2(0.5, 0.5)
 
 [node name="LaserTrap" type="Node2D" parent="TileMap"]
@@ -959,18 +959,18 @@ process_mode = 1
 visibility_layer = 2
 
 [node name="Laser" parent="TileMap/LaserTrap" instance=ExtResource("5_n0ior")]
-position = Vector2(-137, -59)
+position = Vector2(-811, 204)
 scale = Vector2(0.25, 0.25)
 
 [node name="LaserDisable" parent="TileMap/LaserTrap" instance=ExtResource("12_lggft")]
-position = Vector2(276, -8)
+position = Vector2(337, -90)
 scale = Vector2(0.3, 0.3)
 
 [node name="Speed" type="Node2D" parent="TileMap"]
 process_mode = 1
 
 [node name="Area2D" parent="TileMap/Speed" instance=ExtResource("6_4cdrg")]
-position = Vector2(-85, 64)
+position = Vector2(10, -146)
 scale = Vector2(0.45, 0.45)
 
 [node name="Player" parent="TileMap" instance=ExtResource("1_5eya8")]
@@ -995,7 +995,7 @@ theme = ExtResource("16_wfti7")
 process_mode = 1
 
 [node name="Gun" parent="TileMap/Gun" instance=ExtResource("14_acdem")]
-position = Vector2(134, -42)
+position = Vector2(-421, 496)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("15_g1gkp")
 
@@ -1011,14 +1011,14 @@ collision_layer = 2
 [node name="EnemyType2" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
 z_index = 1
-position = Vector2(-662, -590)
+position = Vector2(568, -598)
 scale = Vector2(0.5, 0.5)
 collision_mask = 22
 
 [node name="EnemyType3" parent="TileMap" instance=ExtResource("19_v4n8y")]
 process_mode = 1
 z_index = 1
-position = Vector2(-722, -563)
+position = Vector2(-758, -417)
 scale = Vector2(0.5, 0.5)
 collision_mask = 22
 
@@ -1042,12 +1042,13 @@ scale = Vector2(0.1, 0.1)
 rotates = false
 
 [node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") groups=["Enemies"] instance=ExtResource("22_o6amh")]
+speed = null
 path_follow_node = NodePath("..")
 
 [node name="Spike" type="Node2D" parent="TileMap"]
 
 [node name="Spikes" parent="TileMap/Spike" instance=ExtResource("23_iudoc")]
-position = Vector2(189, 129)
+position = Vector2(604, 606)
 scale = Vector2(0.5, 0.5)
 
 [node name="LaserTrap2" type="Node2D" parent="TileMap"]
@@ -1055,12 +1056,52 @@ process_mode = 1
 visibility_layer = 2
 
 [node name="Laser" parent="TileMap/LaserTrap2" instance=ExtResource("5_n0ior")]
-position = Vector2(-157, 132)
+position = Vector2(648, -372)
 scale = Vector2(0.25, 0.25)
 
 [node name="LaserDisable" parent="TileMap/LaserTrap2" instance=ExtResource("12_lggft")]
-position = Vector2(-110, 130)
+position = Vector2(180, -593)
 scale = Vector2(0.3, 0.3)
+
+[node name="Speed2" type="Node2D" parent="TileMap"]
+process_mode = 1
+
+[node name="Area2D" parent="TileMap/Speed2" instance=ExtResource("6_4cdrg")]
+position = Vector2(468, 416)
+scale = Vector2(0.45, 0.45)
+
+[node name="Speed3" type="Node2D" parent="TileMap"]
+process_mode = 1
+
+[node name="Area2D" parent="TileMap/Speed3" instance=ExtResource("6_4cdrg")]
+position = Vector2(-452, 130)
+scale = Vector2(0.45, 0.45)
+
+[node name="Speed4" type="Node2D" parent="TileMap"]
+process_mode = 1
+
+[node name="Area2D" parent="TileMap/Speed4" instance=ExtResource("6_4cdrg")]
+position = Vector2(406, -382)
+scale = Vector2(0.45, 0.45)
+
+[node name="Speed5" type="Node2D" parent="TileMap"]
+process_mode = 1
+
+[node name="Area2D" parent="TileMap/Speed5" instance=ExtResource("6_4cdrg")]
+position = Vector2(-562, -314)
+scale = Vector2(0.45, 0.45)
+
+[node name="Spike2" type="Node2D" parent="TileMap"]
+
+[node name="Spikes" parent="TileMap/Spike2" instance=ExtResource("23_iudoc")]
+position = Vector2(-173, -304)
+scale = Vector2(0.5, 0.5)
+
+[node name="Spike3" type="Node2D" parent="TileMap"]
+
+[node name="Spikes" parent="TileMap/Spike3" instance=ExtResource("23_iudoc")]
+position = Vector2(702, 201)
+scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
