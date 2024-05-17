@@ -1008,19 +1008,21 @@ rotation = -1.5708
 scale = Vector2(0.3, 0.3)
 collision_layer = 2
 
-[node name="EnemyType2" parent="TileMap" instance=ExtResource("19_v4n8y")]
+[node name="EnemyType2" parent="TileMap" node_paths=PackedStringArray("player") instance=ExtResource("19_v4n8y")]
 process_mode = 1
 z_index = 1
 position = Vector2(568, -598)
 scale = Vector2(0.5, 0.5)
 collision_mask = 22
+player = NodePath("../Player")
 
-[node name="EnemyType3" parent="TileMap" instance=ExtResource("19_v4n8y")]
+[node name="EnemyType3" parent="TileMap" node_paths=PackedStringArray("player") instance=ExtResource("19_v4n8y")]
 process_mode = 1
 z_index = 1
 position = Vector2(-758, -417)
 scale = Vector2(0.5, 0.5)
 collision_mask = 22
+player = NodePath("../Player")
 
 [node name="AmbienceAudio" parent="TileMap" instance=ExtResource("20_ltsno")]
 volume_db = -25.0
@@ -1047,9 +1049,14 @@ path_follow_node = NodePath("..")
 
 [node name="Spike" type="Node2D" parent="TileMap"]
 
+<<<<<<< Updated upstream
 [node name="Spikes" parent="TileMap/Spike" instance=ExtResource("23_iudoc")]
+=======
+[node name="Spikes" parent="TileMap/Spike" node_paths=PackedStringArray("player") instance=ExtResource("23_iudoc")]
+>>>>>>> Stashed changes
 position = Vector2(604, 606)
 scale = Vector2(0.5, 0.5)
+player = NodePath("../../Player")
 
 [node name="LaserTrap2" type="Node2D" parent="TileMap"]
 process_mode = 1
@@ -1093,6 +1100,7 @@ scale = Vector2(0.45, 0.45)
 
 [node name="Spike2" type="Node2D" parent="TileMap"]
 
+<<<<<<< Updated upstream
 [node name="Spikes" parent="TileMap/Spike2" instance=ExtResource("23_iudoc")]
 position = Vector2(-173, -304)
 scale = Vector2(0.5, 0.5)
@@ -1102,6 +1110,19 @@ scale = Vector2(0.5, 0.5)
 [node name="Spikes" parent="TileMap/Spike3" instance=ExtResource("23_iudoc")]
 position = Vector2(702, 201)
 scale = Vector2(0.5, 0.5)
+=======
+[node name="Spikes" parent="TileMap/Spike2" node_paths=PackedStringArray("player") instance=ExtResource("23_iudoc")]
+position = Vector2(-173, -304)
+scale = Vector2(0.5, 0.5)
+player = NodePath("../../Player")
+
+[node name="Spike3" type="Node2D" parent="TileMap"]
+
+[node name="Spikes" parent="TileMap/Spike3" node_paths=PackedStringArray("player") instance=ExtResource("23_iudoc")]
+position = Vector2(702, 201)
+scale = Vector2(0.5, 0.5)
+player = NodePath("../../Player")
+>>>>>>> Stashed changes
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -471,6 +471,7 @@ reset = false
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j3f6r"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k7e2a"]
+advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vyr3t"]
 states/Death/node = SubResource("AnimationNodeAnimation_gwg0x")
@@ -500,7 +501,7 @@ speed = 5000.0
 
 [node name="Body" type="Sprite2D" parent="."]
 position = Vector2(-1, -23)
-texture = ExtResource("8_3266u")
+texture = ExtResource("3_e2066")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -10)

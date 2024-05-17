@@ -7,7 +7,7 @@ class_name EnemyType3
 @export var path_follow_node : PathFollow2D = null
 
 var alien_is_dead: bool = false
-var progress_ratio: float = 0.0
+var progress_ratio = 0
 
 
 func _ready():
@@ -20,8 +20,13 @@ func _ready():
 	
 func _physics_process(delta):
 	if not alien_is_dead and player != null and not player.is_dead:
+<<<<<<< Updated upstream
 		progress_ratio += delta*speed
 d		path_follow_node.progress_ratio = progress_ratio
+=======
+		progress_ratio += delta * speed
+		path_follow_node.progress_ratio = progress_ratio
+>>>>>>> Stashed changes
 		global_position = path_follow_node.global_position
 		
 		move_and_slide()

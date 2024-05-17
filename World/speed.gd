@@ -17,7 +17,7 @@ func _process(delta):
 func _on_body_entered(body):
 	if not speed_change:
 		old_speed = body.speed
-	body.set_speed(10000.0)
+	body.set_speed(50000.0)
 	speed_change = true
 	time = 0
 

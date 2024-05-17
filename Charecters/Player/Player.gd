@@ -19,18 +19,20 @@ var target_position: Vector2 = Vector2.ZERO
 var ray_cast_direction: Vector2 = Vector2.ZERO
 var target
 var hit_pos
+var can_move = false
 @onready var animation_tree = $AnimationTree
 @onready var animation_player = $AnimationPlayer
 @onready var collision_shape = $CollisionShape2D
 @onready var fire_timer = $FireTimer
 @onready var spaceship = $"../../Spaceship/AnimatedSprite2D"
+@onready var spaceship_sprite = $"../../Spaceship/AnimatedSprite2D/Sprite2D"
 @onready var detection = $Range/ShootRange
 @onready var ray_cast = $Range/RayCast2D
 
 func _ready():
 	animated_sprite = $AnimatedSprite2D
 	body_sprite = $Body
-
+	spaceship_sprite.visible = false
 	animated_sprite.visible = false	
 	body_sprite.visible = false
 	animation_tree.set("parameters/Walk/blend_position", 0.0)
@@ -48,15 +50,18 @@ func _ready():
 func _physics_process(delta):
 	if spaceship != null:
 		if spaceship.frame < 25:
-			is_dead = true
+			can_move = false
 		else:
-			is_dead = false
+			can_move = true
+			spaceship_sprite.visible = true
+		print(spaceship.frame)
 		if spaceship.frame >= 20 and spaceship.frame != 25:
 			body_sprite.visible = true
 			animation_tree.get("parameters/playback").travel("Idle")
-			animated_sprite.visible = false
 
-	if not is_dead:
+			
+	if not is_dead and can_move:
+		#print(animation_tree.get("parameters/playback").get_current_node())
 		var direction = Input.get_vector("left", "right", "up", "down").normalized()
 		$Marker2D.look_at(direction)
 
@@ -150,11 +155,9 @@ func aim():
 
 func die():
 	if not is_dead:
+		animation_tree.get("parameters/playback").travel("Death")
 		is_dead = true
 		$DeathSound.play()
-		animated_sprite.visible = false
-		body_sprite.visible = true
-		animation_tree.get("parameters/playback").travel("Death")
 		$LoserAudio.play()
 		await animation_tree.animation_finished
 		Events.gameOver.emit()

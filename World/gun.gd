@@ -15,5 +15,4 @@ func _on_body_entered(body):
 		gun_pickup.emit(true)
 		queue_free()
 		is_picked_up = true
-		print("PickupGun")
 		

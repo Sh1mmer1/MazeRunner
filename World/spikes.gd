@@ -1,6 +1,6 @@
 extends Area2D
 
-
+@export var player: Player
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("default")
@@ -13,7 +13,8 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.has_method("die"):
-		$AnimatedSprite2D.play("activate")
-		body.die()
+	if body == player:
+		if body.has_method("die"):
+			$AnimatedSprite2D.play("activate")
+			body.die()
 

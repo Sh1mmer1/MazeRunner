@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name EnemyType2
 
 @export var speed = 100
-@onready var player: Player = null
+@export var player: Player
 var player_chase: bool = false
 var alien_is_dead: bool = false
 @onready var nav_agent = $Navigation/NavigationAgent2D
