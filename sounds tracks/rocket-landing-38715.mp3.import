@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cca0n11miqmvc"
+path="res://.godot/imported/rocket-landing-38715.mp3-ce2cb55f75f2b69a0affb13c43c3a2a5.mp3str"
+
+[deps]
+
+source_file="res://sounds tracks/rocket-landing-38715.mp3"
+dest_files=["res://.godot/imported/rocket-landing-38715.mp3-ce2cb55f75f2b69a0affb13c43c3a2a5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
