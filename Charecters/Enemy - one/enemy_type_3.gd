@@ -20,13 +20,8 @@ func _ready():
 	
 func _physics_process(delta):
 	if not alien_is_dead and player != null and not player.is_dead:
-<<<<<<< Updated upstream
-		progress_ratio += delta*speed
-d		path_follow_node.progress_ratio = progress_ratio
-=======
 		progress_ratio += delta * speed
 		path_follow_node.progress_ratio = progress_ratio
->>>>>>> Stashed changes
 		global_position = path_follow_node.global_position
 		
 		move_and_slide()

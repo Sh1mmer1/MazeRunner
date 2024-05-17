@@ -27334,13 +27334,8 @@ rotates = false
 [node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") groups=["Enemies"] instance=ExtResource("40_x5c8i")]
 position = Vector2(0.000488281, 30)
 scale = Vector2(1.9, 1.9)
-<<<<<<< Updated upstream
-speed = null
-path_follow_node = NodePath("")
-=======
 speed = 0.1
 path_follow_node = NodePath("..")
->>>>>>> Stashed changes
 
 [node name="EnemyType4" parent="TileMap" instance=ExtResource("39_bks62")]
 z_index = 1
@@ -27415,8 +27410,5 @@ position = Vector2(324, 65)
 scale = Vector2(0.8, 0.8)
 
 [connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]
-<<<<<<< Updated upstream
-=======
 [connection signal="gun_pickup" from="TileMap/Gun/Gun" to="TileMap/Player" method="_on_gun_gun_pickup"]
->>>>>>> Stashed changes
 [connection signal="laser_disable" from="TileMap/LaserTrap/LaserDisable" to="TileMap/LaserTrap/Laser" method="_on_laser_disable_laser_disable"]

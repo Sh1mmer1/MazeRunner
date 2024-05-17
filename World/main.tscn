@@ -1044,16 +1044,11 @@ scale = Vector2(0.1, 0.1)
 rotates = false
 
 [node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") groups=["Enemies"] instance=ExtResource("22_o6amh")]
-speed = null
 path_follow_node = NodePath("..")
 
 [node name="Spike" type="Node2D" parent="TileMap"]
 
-<<<<<<< Updated upstream
-[node name="Spikes" parent="TileMap/Spike" instance=ExtResource("23_iudoc")]
-=======
 [node name="Spikes" parent="TileMap/Spike" node_paths=PackedStringArray("player") instance=ExtResource("23_iudoc")]
->>>>>>> Stashed changes
 position = Vector2(604, 606)
 scale = Vector2(0.5, 0.5)
 player = NodePath("../../Player")
@@ -1100,17 +1095,6 @@ scale = Vector2(0.45, 0.45)
 
 [node name="Spike2" type="Node2D" parent="TileMap"]
 
-<<<<<<< Updated upstream
-[node name="Spikes" parent="TileMap/Spike2" instance=ExtResource("23_iudoc")]
-position = Vector2(-173, -304)
-scale = Vector2(0.5, 0.5)
-
-[node name="Spike3" type="Node2D" parent="TileMap"]
-
-[node name="Spikes" parent="TileMap/Spike3" instance=ExtResource("23_iudoc")]
-position = Vector2(702, 201)
-scale = Vector2(0.5, 0.5)
-=======
 [node name="Spikes" parent="TileMap/Spike2" node_paths=PackedStringArray("player") instance=ExtResource("23_iudoc")]
 position = Vector2(-173, -304)
 scale = Vector2(0.5, 0.5)
@@ -1122,7 +1106,6 @@ player = NodePath("../../Player")
 position = Vector2(702, 201)
 scale = Vector2(0.5, 0.5)
 player = NodePath("../../Player")
->>>>>>> Stashed changes
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
