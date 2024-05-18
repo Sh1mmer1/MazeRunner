@@ -32,7 +32,8 @@ var can_move = false
 func _ready():
 	animated_sprite = $AnimatedSprite2D
 	body_sprite = $Body
-	spaceship_sprite.visible = false
+	if spaceship:
+		spaceship_sprite.visible = false
 	animated_sprite.visible = false	
 	body_sprite.visible = false
 	animation_tree.set("parameters/Walk/blend_position", 0.0)
@@ -41,6 +42,7 @@ func _ready():
 		body_sprite.visible = true
 		animation_tree.get("parameters/playback").travel("Idle")
 		animated_sprite.visible = false
+		can_move = true
 	if is_gun_picked_up:
 		animation_tree.get("parameters/playback").travel("Idle_Gun")
 	fire_timer.wait_time = 0.2
@@ -54,7 +56,6 @@ func _physics_process(delta):
 		else:
 			can_move = true
 			spaceship_sprite.visible = true
-		print(spaceship.frame)
 		if spaceship.frame >= 20 and spaceship.frame != 25:
 			body_sprite.visible = true
 			animation_tree.get("parameters/playback").travel("Idle")

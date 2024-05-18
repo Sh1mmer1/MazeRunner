@@ -6,11 +6,12 @@ class_name EnemyType1
 @export var player: Player
 var player_chase: bool = false
 var alien_is_dead: bool = false
-@onready var nav_agent = $Navigation/NavigationAgent2D
+@export var nav_agent = NavigationAgent2D
 
 func _ready():
 	$enemy_animation.play("idle")
 	player = $"../Player"
+	nav_agent = $Navigation/NavigationAgent2D
 
 func _physics_process(_delta):
 	if not alien_is_dead and player != null and not player.is_dead:

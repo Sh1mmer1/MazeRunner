@@ -59,6 +59,7 @@ pause={
 2d_physics/layer_4="Enemy"
 2d_physics/layer_6="Door"
 2d_physics/layer_7="Bullet"
+2d_physics/layer_11="Wall3"
 
 [rendering]
 
