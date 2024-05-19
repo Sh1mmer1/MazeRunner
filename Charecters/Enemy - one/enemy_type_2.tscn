@@ -142,7 +142,7 @@ height = 70.0
 
 [node name="EnemyType2" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent") groups=["Enemies"]]
 collision_layer = 8
-collision_mask = 22
+collision_mask = 23
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_v38w1")

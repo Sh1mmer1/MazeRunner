@@ -815,7 +815,7 @@ layer_2/tile_data = PackedInt32Array(-720954, 28, 0, -983095, 28, 0, 1507215, 27
 process_mode = 1
 position = Vector2(-1218, -134)
 scale = Vector2(0.75, 0.75)
-collision_mask = 1074
+collision_mask = 1038
 speed = 10000.0
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
@@ -835,6 +835,10 @@ process_mode = 1
 
 [node name="Gun" parent="TileMap/Gun" instance=ExtResource("37_qgg0h")]
 position = Vector2(-998, -1423)
+script = ExtResource("38_ksdq6")
+
+[node name="Gun2" parent="TileMap/Gun" instance=ExtResource("37_qgg0h")]
+position = Vector2(-1142, -248)
 script = ExtResource("38_ksdq6")
 
 [node name="LaserTrap" type="Node2D" parent="TileMap"]
@@ -871,24 +875,21 @@ collision_layer = 2
 
 [node name="Spike" type="Node2D" parent="TileMap"]
 
-[node name="Spikes" parent="TileMap/Spike" node_paths=PackedStringArray("player") instance=ExtResource("43_rekxk")]
+[node name="Spikes" parent="TileMap/Spike" instance=ExtResource("43_rekxk")]
 position = Vector2(-874, 899)
 scale = Vector2(0.8, 0.8)
-player = NodePath("../../Player")
 
 [node name="Spike2" type="Node2D" parent="TileMap"]
 
-[node name="Spikes" parent="TileMap/Spike2" node_paths=PackedStringArray("player") instance=ExtResource("43_rekxk")]
+[node name="Spikes" parent="TileMap/Spike2" instance=ExtResource("43_rekxk")]
 position = Vector2(155, -508)
 scale = Vector2(0.8, 0.8)
-player = NodePath("../../Player")
 
 [node name="Spike3" type="Node2D" parent="TileMap"]
 
-[node name="Spikes" parent="TileMap/Spike3" node_paths=PackedStringArray("player") instance=ExtResource("43_rekxk")]
+[node name="Spikes" parent="TileMap/Spike3" instance=ExtResource("43_rekxk")]
 position = Vector2(-1133, -771)
 scale = Vector2(0.8, 0.8)
-player = NodePath("../../Player")
 
 [node name="Speed3" type="Node2D" parent="TileMap"]
 process_mode = 1
@@ -991,9 +992,9 @@ position = Vector2(506, -237)
 scale = Vector2(0.1, 0.1)
 rotates = false
 
-[node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") groups=["Enemies"] instance=ExtResource("50_aj5y6")]
+[node name="EnemyType3" parent="TileMap/Sleepy/Path2D/PathFollow2D" node_paths=PackedStringArray("path_follow_node") instance=ExtResource("50_aj5y6")]
 position = Vector2(0.000488281, 30)
-scale = Vector2(1.9, 1.9)
+scale = Vector2(8, 8)
 path_follow_node = NodePath("..")
 
 [node name="Spaceship" type="Node2D" parent="."]
@@ -1031,4 +1032,6 @@ shape = SubResource("CapsuleShape2D_geyw0")
 
 [connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]
 [connection signal="gun_pickup" from="TileMap/Gun/Gun" to="TileMap/Player" method="_on_gun_gun_pickup"]
+[connection signal="body_entered" from="TileMap/Gun/Gun2" to="TileMap/Gun/Gun2" method="_on_body_entered"]
+[connection signal="gun_pickup" from="TileMap/Gun/Gun2" to="TileMap/Player" method="_on_gun_gun_pickup"]
 [connection signal="laser_disable" from="TileMap/LaserTrap/LaserDisable" to="TileMap/LaserTrap/Laser" method="_on_laser_disable_laser_disable"]

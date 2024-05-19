@@ -115,6 +115,7 @@ animations = [{
 size = Vector2(114, 64)
 
 [node name="Spikes" type="Area2D"]
+collision_layer = 2048
 script = ExtResource("1_mgxdg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -41,9 +41,8 @@ func dieAlien():
 		$enemy_animation.play("death")
 		velocity = Vector2.ZERO
 		player.is_gun_picked_up = false
-		queue_free()
 		await $enemy_animation.animation_finished
-		#queue_free() <- pakeist poto
+		queue_free()
 
 
 func _on_gun_gun_pickup(is_picked_up):

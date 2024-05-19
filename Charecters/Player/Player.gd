@@ -122,9 +122,13 @@ func aim():
 	if result:
 		hit_pos = result.position
 		var collider = result.collider 
-		if collider and collider.is_in_group("Enemies"):
-			if gun_cooldown:
-				fire_laser(target.position)
+		if collider:
+			print("Collider name: ", collider.name)
+			print("Collider groups: ", collider.get_groups())
+			if collider.is_in_group("Enemies"):
+				print("Enemy found")
+				if gun_cooldown:
+					fire_laser(target.position)
 
 #func update_sprite_direction(direction):
 #	var animation_name = "" 
@@ -187,7 +191,7 @@ func stop_player_movement():
 	body_sprite.visible = true
 
 func fire_laser(pos):
-
+	print("shooting")
 	if is_gun_picked_up:
 		var b = laser_beam.instantiate()
 		var a = (pos - global_position).angle()
