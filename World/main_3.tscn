@@ -837,10 +837,6 @@ process_mode = 1
 position = Vector2(-998, -1423)
 script = ExtResource("38_ksdq6")
 
-[node name="Gun2" parent="TileMap/Gun" instance=ExtResource("37_qgg0h")]
-position = Vector2(-1142, -248)
-script = ExtResource("38_ksdq6")
-
 [node name="LaserTrap" type="Node2D" parent="TileMap"]
 process_mode = 1
 visibility_layer = 2
@@ -970,12 +966,6 @@ position = Vector2(2307, -397)
 scale = Vector2(0.75, 0.75)
 player = NodePath("../Player")
 
-[node name="EnemyType7" parent="TileMap" node_paths=PackedStringArray("player") instance=ExtResource("48_3twt3")]
-z_index = 1
-position = Vector2(-505, -8)
-scale = Vector2(0.75, 0.75)
-player = NodePath("../Player")
-
 [node name="EnemyType8" parent="TileMap" node_paths=PackedStringArray("player") instance=ExtResource("48_3twt3")]
 z_index = 1
 position = Vector2(-115, -1037)
@@ -1032,6 +1022,4 @@ shape = SubResource("CapsuleShape2D_geyw0")
 
 [connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]
 [connection signal="gun_pickup" from="TileMap/Gun/Gun" to="TileMap/Player" method="_on_gun_gun_pickup"]
-[connection signal="body_entered" from="TileMap/Gun/Gun2" to="TileMap/Gun/Gun2" method="_on_body_entered"]
-[connection signal="gun_pickup" from="TileMap/Gun/Gun2" to="TileMap/Player" method="_on_gun_gun_pickup"]
 [connection signal="laser_disable" from="TileMap/LaserTrap/LaserDisable" to="TileMap/LaserTrap/Laser" method="_on_laser_disable_laser_disable"]
