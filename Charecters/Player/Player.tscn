@@ -505,6 +505,7 @@ position = Vector2(-1, -23)
 texture = ExtResource("8_3266u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, -10)
 shape = SubResource("CapsuleShape2D_5lh41")
 
@@ -542,6 +543,7 @@ stream = ExtResource("26_intwu")
 volume_db = -20.0
 
 [node name="Range" type="Area2D" parent="."]
+visible = false
 collision_mask = 8
 
 [node name="ShootRange" type="CollisionShape2D" parent="Range"]
@@ -563,6 +565,7 @@ stream = ExtResource("29_rr8t1")
 volume_db = -20.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
+visible = false
 
 [node name="FireTimer" type="Timer" parent="."]
 

@@ -43,6 +43,7 @@ sprite_frames = SubResource("SpriteFrames_fpj88")
 animation = &"default_speed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_jutv5")
 

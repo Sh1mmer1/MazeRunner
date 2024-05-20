@@ -18,7 +18,7 @@ func _on_body_entered(body):
 	if not speed_change:
 		old_speed = body.speed
 		$laserOFF.play()
-	body.set_speed(50000.0)
+	body.set_speed(15000.0)
 	speed_change = true
 	time = 0
 

@@ -55,7 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://cp6pkmsb18n27" path="res://Assets/Spaceship/sprite_raketa_07.png" id="45_emdrt"]
 [ext_resource type="PackedScene" uid="uid://dqbrmyn4aod5b" path="res://World/card_green.tscn" id="45_ia0xt"]
 [ext_resource type="Texture2D" uid="uid://dnwmmll7280qc" path="res://Assets/Spaceship/sprite_raketa_08.png" id="46_4vlq4"]
-[ext_resource type="PackedScene" uid="uid://bbnf7l38fuiop" path="res://World/purple_card.tscn" id="46_oodwm"]
+[ext_resource type="PackedScene" uid="uid://bbnf7l38fuiop" path="res://purple_card.tscn" id="46_oodwm"]
 [ext_resource type="PackedScene" uid="uid://b1minvi4p3p4v" path="res://World/red_card.tscn" id="47_co325"]
 [ext_resource type="Texture2D" uid="uid://da46fjgxl44pf" path="res://Assets/Spaceship/sprite_raketa_09.png" id="47_wmuma"]
 [ext_resource type="PackedScene" uid="uid://cptp1gxwspwny" path="res://Charecters/Enemy - one/enemy_type_1.tscn" id="48_3twt3"]
@@ -892,6 +892,7 @@ scale = Vector2(0.8, 0.8)
 process_mode = 1
 
 [node name="Area2D" parent="TileMap/Speed3" instance=ExtResource("41_cla8m")]
+z_index = -1
 position = Vector2(-621, -1124)
 scale = Vector2(0.8, 0.8)
 
