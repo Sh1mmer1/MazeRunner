@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://biykkss7huu4s"]
+[gd_scene load_steps=154 format=3 uid="uid://biykkss7huu4s"]
 
 [ext_resource type="Script" path="res://World/main_3.gd" id="1_6vixe"]
 [ext_resource type="PackedScene" uid="uid://ca4jhs7rwnae1" path="res://Charecters/Player/Player.tscn" id="1_54a2h"]
@@ -55,7 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://cp6pkmsb18n27" path="res://Assets/Spaceship/sprite_raketa_07.png" id="45_emdrt"]
 [ext_resource type="PackedScene" uid="uid://dqbrmyn4aod5b" path="res://World/card_green.tscn" id="45_ia0xt"]
 [ext_resource type="Texture2D" uid="uid://dnwmmll7280qc" path="res://Assets/Spaceship/sprite_raketa_08.png" id="46_4vlq4"]
-[ext_resource type="PackedScene" uid="uid://bbnf7l38fuiop" path="res://purple_card.tscn" id="46_oodwm"]
+[ext_resource type="PackedScene" uid="uid://bbnf7l38fuiop" path="res://World/purple_card.tscn" id="46_oodwm"]
 [ext_resource type="PackedScene" uid="uid://b1minvi4p3p4v" path="res://World/red_card.tscn" id="47_co325"]
 [ext_resource type="Texture2D" uid="uid://da46fjgxl44pf" path="res://Assets/Spaceship/sprite_raketa_09.png" id="47_wmuma"]
 [ext_resource type="PackedScene" uid="uid://cptp1gxwspwny" path="res://Charecters/Enemy - one/enemy_type_1.tscn" id="48_3twt3"]
@@ -78,6 +78,7 @@
 [ext_resource type="Texture2D" uid="uid://kmtqpan3n8b2" path="res://Assets/Spaceship/sprite_raketa_24.png" id="62_kt775"]
 [ext_resource type="Texture2D" uid="uid://dvuub3v6gg655" path="res://Assets/Spaceship/sprite_raketa_25.png" id="63_vl8l8"]
 [ext_resource type="Texture2D" uid="uid://dvwny3akiwrv6" path="res://Assets/Spaceship/sprite_raketa_28.png" id="78_5a67m"]
+[ext_resource type="AudioStream" uid="uid://clfydhe68j657" path="res://sounds tracks/wind-2-6196.mp3" id="79_py1yy"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xae5m"]
 tile_data = PackedInt32Array(131072, 327705, 4, 2, 327705, 4)
@@ -1019,6 +1020,11 @@ shape = SubResource("CapsuleShape2D_163dx")
 position = Vector2(-2, 308.5)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_geyw0")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("79_py1yy")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]
 [connection signal="gun_pickup" from="TileMap/Gun/Gun" to="TileMap/Player" method="_on_gun_gun_pickup"]

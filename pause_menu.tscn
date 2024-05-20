@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://crgynbxlgkicu"]
+[gd_scene load_steps=7 format=3 uid="uid://crgynbxlgkicu"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_qy7nj"]
 [ext_resource type="Theme" uid="uid://dw8bd56pouxai" path="res://UI/game_theme.tres" id="2_sl2p7"]
+[ext_resource type="AudioStream" uid="uid://da4s37lc16eff" path="res://sounds tracks/analog-appliance-button-15-186961.mp3" id="3_rpa4h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxll6"]
 content_margin_left = 10.0
@@ -136,6 +137,10 @@ theme_override_constants/icon_max_width = 0
 theme_override_fonts/font = SubResource("FontFile_4p11q")
 theme_override_styles/normal = SubResource("StyleBoxFlat_q4re8")
 text = "Quit Game"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rpa4h")
+volume_db = -20.0
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/QuitToMain" to="." method="_on_quit_to_main_pressed"]

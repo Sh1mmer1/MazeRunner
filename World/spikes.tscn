@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cxjqeoob7h1us"]
+[gd_scene load_steps=29 format=3 uid="uid://cxjqeoob7h1us"]
 
 [ext_resource type="Texture2D" uid="uid://448thuf7kbb1" path="res://Assets/Spikes/spiketrap_idle/spiketrap_idle00.png" id="1_aetqd"]
 [ext_resource type="Script" path="res://World/spikes.gd" id="1_mgxdg"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bv5uw5836v8yq" path="res://Assets/Spikes/spiketrap_activated/spiketrap_activated13.png" id="15_tg18x"]
 [ext_resource type="Texture2D" uid="uid://b3kfaostinse8" path="res://Assets/Spikes/spiketrap_activated/spiketrap_activated14.png" id="16_xbe2h"]
 [ext_resource type="Texture2D" uid="uid://cjrq4aewp8odj" path="res://Assets/Spikes/spiketrap_activated/spiketrap_activated15.png" id="17_biohp"]
+[ext_resource type="AudioStream" uid="uid://pfrbyqw0jqf4" path="res://sounds tracks/metal-blade-slice-76-200891.mp3" id="26_eni6j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fdue"]
 animations = [{
@@ -127,5 +128,9 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 22)
 shape = SubResource("RectangleShape2D_6af38")
+
+[node name="SpikeAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_eni6j")
+volume_db = -20.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

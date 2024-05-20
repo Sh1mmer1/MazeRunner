@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bff150qyb0p3x" path="res://Assets/Speed/sprite_powerup2.png" id="4_caxp1"]
 [ext_resource type="Texture2D" uid="uid://dr7q4ije6h0my" path="res://Assets/Speed/sprite_powerup3.png" id="5_chvyf"]
 [ext_resource type="Texture2D" uid="uid://dd44kvg7wpqd" path="res://Assets/Speed/sprite_powerup4.png" id="6_aliha"]
-[ext_resource type="AudioStream" uid="uid://ma7ycnb5tul2" path="res://sounds tracks/power-down-89297.mp3" id="7_wu3wr"]
+[ext_resource type="AudioStream" uid="uid://tt77stvsxwws" path="res://sounds tracks/coin-upaif-14631.mp3" id="7_sl3xg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fpj88"]
 animations = [{
@@ -47,7 +47,8 @@ position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_jutv5")
 
 [node name="laserOFF" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_wu3wr")
+stream = ExtResource("7_sl3xg")
 volume_db = -20.0
+pitch_scale = 1.65
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

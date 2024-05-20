@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cptp1gxwspwny"]
+[gd_scene load_steps=37 format=3 uid="uid://cptp1gxwspwny"]
 
 [ext_resource type="Script" path="res://Charecters/Enemy - one/enemy_type_1.gd" id="1_uwats"]
 [ext_resource type="Texture2D" uid="uid://xgh70twdulsy" path="res://Assets/Sleepy - enemy/purple alien/alien sleep purple/alien_purple_sleep0.png" id="2_w6ywt"]
@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://1j8utgfdlp8" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_6.png" id="27_yvdl7"]
 [ext_resource type="Texture2D" uid="uid://bs8nynusy8n2a" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_7.png" id="28_3befx"]
 [ext_resource type="Texture2D" uid="uid://cmwqpxmpir23h" path="res://Assets/Sleepy - enemy/purple alien/alien front purple/alien_purple_front_8.png" id="29_hh4gh"]
+[ext_resource type="AudioStream" uid="uid://dec2pa5miscm3" path="res://sounds tracks/male-ahhhh-104524.mp3" id="30_taj2o"]
+[ext_resource type="AudioStream" uid="uid://cdke1bx5rhv0f" path="res://sounds tracks/yawn1-35948.mp3" id="31_s2tti"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0a3ja"]
 animations = [{
@@ -196,6 +198,16 @@ debug_enabled = true
 [node name="RecalculateTimer" type="Timer" parent="Navigation"]
 wait_time = 0.1
 autostart = true
+
+[node name="Awake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_taj2o")
+volume_db = -22.0
+pitch_scale = 0.58
+
+[node name="Sleppy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_s2tti")
+volume_db = -15.0
+pitch_scale = 0.53
 
 [connection signal="area_exited" from="enemy_animation/not_detection_area" to="." method="_on_not_detection_area_area_exited"]
 [connection signal="area_entered" from="enemy_animation/detection_area" to="." method="_on_detection_area_area_entered"]

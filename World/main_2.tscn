@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=3 uid="uid://c1o8k3fu2daei"]
+[gd_scene load_steps=182 format=3 uid="uid://c1o8k3fu2daei"]
 
 [ext_resource type="Texture2D" uid="uid://d0aujp6lee620" path="res://Assets/Map - lvl3/map3tile_03.png" id="1_8bg48"]
 [ext_resource type="Script" path="res://World/main_2.gd" id="1_vn6tp"]
@@ -73,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://bbnf7l38fuiop" path="res://purple_card.tscn" id="65_la1pb"]
 [ext_resource type="PackedScene" uid="uid://b1minvi4p3p4v" path="res://World/red_card.tscn" id="66_n2sfp"]
 [ext_resource type="Texture2D" uid="uid://dvwny3akiwrv6" path="res://Assets/Spaceship/sprite_raketa_28.png" id="69_gjei5"]
+[ext_resource type="AudioStream" uid="uid://clfydhe68j657" path="res://sounds tracks/wind-2-6196.mp3" id="74_ftt8w"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gcx6s"]
 
@@ -25414,6 +25415,10 @@ speed = 10000.0
 
 [node name="Camera2D2" type="Camera2D" parent="TileMap/Player"]
 zoom = Vector2(0.75, 0.75)
+limit_left = -2300
+limit_top = -890
+limit_right = 1500
+limit_bottom = 890
 
 [node name="PauseMenu" parent="TileMap/Player/Camera2D2" instance=ExtResource("3_ayt6e")]
 visible = false
@@ -25424,11 +25429,6 @@ theme = ExtResource("4_fnv0n")
 
 [node name="Gun" type="Node2D" parent="TileMap"]
 process_mode = 1
-
-[node name="Gun2" parent="TileMap/Gun" instance=ExtResource("31_4n1dy")]
-position = Vector2(-1657, 581)
-scale = Vector2(0.64, 0.64)
-script = ExtResource("32_r2661")
 
 [node name="Gun" parent="TileMap/Gun" instance=ExtResource("31_4n1dy")]
 position = Vector2(-918, -567)
@@ -25617,8 +25617,11 @@ position = Vector2(-2, 308.5)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_rlpxv")
 
-[connection signal="body_entered" from="TileMap/Gun/Gun2" to="TileMap/Gun/Gun2" method="_on_body_entered"]
-[connection signal="gun_pickup" from="TileMap/Gun/Gun2" to="TileMap/Player" method="_on_gun_gun_pickup"]
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("74_ftt8w")
+volume_db = -20.0
+autoplay = true
+
 [connection signal="body_entered" from="TileMap/Gun/Gun" to="TileMap/Gun/Gun" method="_on_body_entered"]
 [connection signal="gun_pickup" from="TileMap/Gun/Gun" to="TileMap/Player" method="_on_gun_gun_pickup"]
 [connection signal="laser_disable" from="TileMap/LaserTrap/LaserDisable" to="TileMap/LaserTrap/Laser" method="_on_laser_disable_laser_disable"]

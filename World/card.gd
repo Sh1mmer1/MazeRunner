@@ -9,6 +9,7 @@ func _ready():
 	card_animation.play("card")
 	
 func _on_body_entered(body):
+	$PickUp.play()
 	if body is Player:
 		$PickUp.play()
 		card_pickup.emit(self)

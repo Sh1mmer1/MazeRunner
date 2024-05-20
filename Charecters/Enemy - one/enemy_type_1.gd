@@ -65,12 +65,14 @@ func _on_recalculate_timer_timeout():
 
 func _on_detection_area_area_entered(area):
 	target_node = area.owner
+	$Awake.play()
 	$enemy_animation.play("walk_front")
 
 
 func _on_not_detection_area_area_exited(area):
 	if area.owner == target_node:
 		target_node = null
+		$Sleppy.play()
 		$enemy_animation.play("idle")
 
 

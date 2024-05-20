@@ -76,6 +76,10 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_v5f05")
 
+[node name="Click" type="AudioStreamPlayer" parent="Settings"]
+stream = ExtResource("12_3qdkn")
+volume_db = -20.0
+
 [node name="Play" type="TextureButton" parent="."]
 z_index = 2
 custom_minimum_size = Vector2(0, 50)

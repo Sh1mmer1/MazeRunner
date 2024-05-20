@@ -2,11 +2,13 @@ extends Control
 
 
 func _on_quit_game_pressed():
+	$Click.play()
 	get_tree().paused = false
 	get_tree().quit()
 
 
 func _on_restart_pressed():
+	$Click.play()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 

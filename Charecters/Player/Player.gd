@@ -193,6 +193,7 @@ func stop_player_movement():
 func fire_laser(pos):
 	print("shooting")
 	if is_gun_picked_up:
+		$ShotAudio.play()
 		var b = laser_beam.instantiate()
 		var a = (pos - global_position).angle()
 		b.start(global_position, a + randf_range(-0.5, 0.5))

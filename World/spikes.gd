@@ -13,6 +13,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.has_method("die"):
+		$SpikeAudio.play()
 		$AnimatedSprite2D.play("activate")
 		body.die()
 
