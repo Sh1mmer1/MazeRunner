@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdke1bx5rhv0f"
+path="res://.godot/imported/yawn1-35948.mp3-0f44d80402a5608e57d2a58a8d4b09a3.mp3str"
+
+[deps]
+
+source_file="res://sounds tracks/yawn1-35948.mp3"
+dest_files=["res://.godot/imported/yawn1-35948.mp3-0f44d80402a5608e57d2a58a8d4b09a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
